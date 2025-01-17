@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Matthias Maes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h1>Matthias Maes</h1>
+            <hr>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="games.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <section>
+                <h2>Projects</h2>
+                <hr>
+                <h3>Game Jam & Group Projects</h3>
+                <div class="projects">
+                    <div class="project" id="project-image-1" onclick="openOverlay('project-image-1', 'https://scuttsy.itch.io/bonkers-for-loot')">
+                        <h4>Bonkers for Loot</h4>
+                        <img class="project-image" src="images/BonkersForLoot.png" alt="Bonkers for Loot">
+                        <p>A couch co-op game where you play as sliding penguins against each other to catch the most amount of fish. <br>Fight for your fish or slide trying!</p>
+                    </div>
+                    <div class="project" id="project-image-2" onclick="openOverlay('project-image-2', 'https://mm-13.itch.io/tides-of-oblivion')">
+                        <h4>Tides of Oblivion</h4>
+                        <img class="project-image" src="images/TidesOfOblivion.png" alt="Tides of Oblivion">
+                        <p>You're stranded on an island in the middle of nowhere with Mother Nature trying to kill you. Prepare for coming storms, manage resources, and find your way off the island!</p>
+                    </div>
+                    
+                    <div class="project" id="project-image-3" onclick="openOverlay('project-image-3', 'https://mm-13.itch.io/smack-n-snatch')">
+                        <h4>Smack 'n' Snatch</h4>
+                        <img class="project-image" src="images/zYpPY2.png" alt="Smack 'n' Snatch">
+                        <p>You're a forest loner living away from civilisation. Defend against waves of squirrels stealing your items and hold out for as long as you can!</p>
+                    </div>
+                </div>
+                <h3>Personal Games</h3>
+                <div class="projects">
+                    <div class="project" id="project-image-4" onclick="openOverlay('project-image-4', 'https://mm-13.itch.io/asteroid-trap')">
+                        <h4>Asteroid Trap</h4>
+                        <img class="project-image" src="images/AsteroidTrap.png" alt="Asteroid Trap">
+                        <p>A simple space shooter game, but why don't you see who can get the highest score... You or one of your friends?</p>
+                    </div>
+                    <div class="project" id="project-image-5" onclick="openOverlay('project-image-5', 'https://mm-13.itch.io/slither-n-chomp')">
+                        <h4>Slither 'n' Chomp</h4>
+                        <img class="project-image" src="images/SlithernChomp.png" alt="SlithernChomp">
+                        <p>A python Snake game where all of a sudden, an enemy spawns who's trying to steal your food. Get the foost as fast as possible to not starve to death!</p>
+                    </div>
+                </div>
+                <h3>GitHub Projects & Websites</h3>
+                <div class="projects">
+                    <div class="project" onclick="myFunction('https://github.com/MM-13/CloudZip')">
+                        <h4>CloudZIP</h4>
+                        <!--<a href="https://github.com/MM-13/CloudZip">CloudZIP GitHub Page</a> -->
+                        <p>ACloudZIP is one of mmy first python projects ever! It's a simple program that compresses files and folders into a single zip file and uploads it to your google drive.</p>
+                    </div>
+                        <div class="project" onclick="myFunction('https://mm-13.github.io/CAP/')">
+                            <h4>Chaotic Art Productions</h4>
+                            <img class="project-image-web" src="images/capfinal.png" alt="CAP">
+                            <!-- <a href="https://mm-13.github.io/CAP/">https://chaoticartproductions.com</a> -->
+                            <p>This is the website I made for a group project where we had to make a fictional company.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="overlay" class="overlay">
+                    <div class="overlay-content">
+                        <span class="close" onclick="closeOverlay()">&times;</span>
+                        <h2 id="overlay-title"></h2>
+                        <img id="overlay-image" src="" alt="">
+                        <p id="overlay-description"></p>
+                        <a id="overlay-download" href="#" target="_blank"><button>Download here!</button></a>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 Matthias Maes</p>
+        </footer>
+    </div>
+</body>
+</html>
+<script>
+    function openOverlay(projectId, downloadLink) {
+    const overlay = document.getElementById('overlay');
+    const project = document.getElementById(projectId);
+
+    if (!project) return; // Safeguard if the project doesn't exist
+
+    const title = project.querySelector('h4').textContent;
+    const description = project.querySelector('p').textContent;
+    const imageSource = project.querySelector('.project-image').src;
+
+    // Populate overlay content
+    overlay.querySelector('h2').textContent = title;
+    overlay.querySelector('p').textContent = description;
+    overlay.querySelector('img').src = imageSource;
+    overlay.querySelector('a').href = downloadLink;
+
+    // Show the overlay
+    overlay.style.display = 'block';
+    }
+
+    function closeOverlay() {
+        const overlay = document.getElementById('overlay');
+        overlay.style.display = 'none'; // Hide overlay on close
+    }
+
+    function myFunction(webiste) {
+        window.open(webiste, "_blank");
+    }
+</script>
+

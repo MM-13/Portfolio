@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Matthias Maes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .resume-header {
+            display: flex;
+            justify-content: space-between; /* Aligns items to the ends */
+            align-items: center; /* Vertically centers the items */
+            margin-bottom: 10px;
+        }
+
+        .global-container {
+            max-width: 55%;
+        }
+
+        /* Ensure the PDF viewer has a clean layout */
+        .pdf-container {
+            width: 100%;
+            height: 1200px; /* Adjust height as needed */
+            border: 1px solid #d4d4d4;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+
+        .cta {
+            text-align: right;
+            text-decoration: none;
+        }
+
+        .cta button {
+            display: block;
+            padding: 10px 20px;
+            background-color: #569cd6;
+            color: #fff;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta button:hover {
+            background-color: #4178a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h1>Matthias Maes</h1>
+            <hr>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="games.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <section>
+                <h2>About Me</h2>
+                <hr>
+                <div class="global-container">
+                    <div class="resume-header">
+                        <h3>Resume</h3>
+                        <a href="Resources/Resume.pdf" class="cta" download><button>Download Resume</button></a>
+                    </div>
+                    <div class="pdf-container">
+                        <iframe src="Resources/Resume.pdf" width="100%" height="100%" title="Matthias Maes Resume"></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Matthias Maes. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
