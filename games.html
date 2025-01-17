@@ -24,20 +24,20 @@
                 <hr>
                 <h3>Game Jam & Group Projects</h3>
                 <div class="projects">
-                    <div class="project" id="project-image-1" onclick="openOverlay('project-image-1', 'https://scuttsy.itch.io/bonkers-for-loot')">
+                    <div class="project" id="project-image-1" onclick="openOverlay('project-image-1', 'Windows / PC', 'Unity / C#', 'https://scuttsy.itch.io/bonkers-for-loot')">
                         <h4>Bonkers for Loot</h4>
                         <img class="project-image" src="Images/BonkersForLoot.png" alt="Bonkers for Loot">
                         <p>A couch co-op game where you play as sliding penguins against each other to catch the most amount of fish. Fight for your fish or slide trying!</p>
                         <p>...</p>
                     </div>
-                    <div class="project" id="project-image-2" onclick="openOverlay('project-image-2', 'https://mm-13.itch.io/tides-of-oblivion')">
+                    <div class="project" id="project-image-2" onclick="openOverlay('project-image-2', 'Windows / PC', 'Unity / C#', 'https://mm-13.itch.io/tides-of-oblivion')">
                         <h4>Tides of Oblivion</h4>
                         <img class="project-image" src="Images/TidesOfOblivion.png" alt="Tides of Oblivion">
                         <p>Stranded on an island in the middle of nowhere with Mother Nature trying to kill you. Prepare for coming storms and find your way off the island!</p>
                         <p>...</p>
                     </div>
                     
-                    <div class="project" id="project-image-3" onclick="openOverlay('project-image-3', 'https://mm-13.itch.io/smack-n-snatch')">
+                    <div class="project" id="project-image-3" onclick="openOverlay('project-image-3', 'Windows / PC', 'MonoGame / C#', 'https://mm-13.itch.io/smack-n-snatch')">
                         <h4>Smack 'n' Snatch</h4>
                         <img class="project-image" src="Images/zYpPY2.png" alt="Smack 'n' Snatch">
                         <p>You're a forest loner living away from civilisation. Defend against waves of squirrels stealing your items and hold out for as long as you can!</p>
@@ -46,13 +46,13 @@
                 </div>
                 <h3>Personal Games</h3>
                 <div class="projects">
-                    <div class="project" id="project-image-4" onclick="openOverlay('project-image-4', 'https://mm-13.itch.io/asteroid-trap')">
+                    <div class="project" id="project-image-4" onclick="openOverlay('project-image-4', 'Windows / PC', 'MonoGame / C#', 'https://mm-13.itch.io/asteroid-trap')">
                         <h4>Asteroid Trap</h4>
                         <img class="project-image" src="Images/AsteroidTrap.png" alt="Asteroid Trap">
                         <p>A simple space shooter game, but why don't you see who can get the highest score... You or one of your friends?</p>
                         <p>...</p>
                     </div>
-                    <div class="project" id="project-image-5" onclick="openOverlay('project-image-5', 'https://mm-13.itch.io/slither-n-chomp')">
+                    <div class="project" id="project-image-5" onclick="openOverlay('project-image-5', 'Windows / PC / Web', 'Python' , 'https://mm-13.itch.io/slither-n-chomp')">
                         <h4>Slither 'n' Chomp</h4>
                         <img class="project-image" src="Images/SlithernChomp.png" alt="SlithernChomp">
                         <p>A python Snake game where an enemy is trying to steal your food. Get the foost as fast as possible to not starve to death!</p>
@@ -83,6 +83,8 @@
                         <h2 id="overlay-title"></h2>
                         <img id="overlay-image" src="" alt="">
                         <p id="overlay-description"></p>
+                        <p><strong>Platform:</strong> <span id="overlay-platform"></span></p>
+                        <p><strong>Language:</strong> <span id="overlay-language"></span></p>
                         <a id="overlay-download" href="#" target="_blank"><button>Download here!</button></a>
                     </div>
                 </div>
@@ -96,7 +98,7 @@
 </body>
 </html>
 <script>
-    function openOverlay(projectId, downloadLink) {
+    function openOverlay(projectId, platform, language, downloadLink) {
     const overlay = document.getElementById('overlay');
     const project = document.getElementById(projectId);
 
