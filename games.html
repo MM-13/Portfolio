@@ -24,20 +24,20 @@
                 <hr>
                 <h3>Game Jam & Group Projects</h3>
                 <div class="projects">
-                    <div class="project" id="project-image-1" onclick="openOverlay('project-image-1', 'Windows / PC', 'Unity / C#', 'https://scuttsy.itch.io/bonkers-for-loot')">
+                    <div class="project" id="project-image-1" onclick="openOverlay('project-image-1')">
                         <h4>Bonkers for Loot</h4>
                         <img class="project-image" src="Images/BonkersForLoot.png" alt="Bonkers for Loot">
                         <p>A couch co-op game where you play as sliding penguins against each other to catch the most amount of fish. Fight for your fish or slide trying!</p>
                         <p>...</p>
                     </div>
-                    <div class="project" id="project-image-2" onclick="openOverlay('project-image-2', 'Windows / PC', 'Unity / C#', 'https://mm-13.itch.io/tides-of-oblivion')">
+                    <div class="project" id="project-image-2" onclick="openOverlay('project-image-2')">
                         <h4>Tides of Oblivion</h4>
                         <img class="project-image" src="Images/TidesOfOblivion.png" alt="Tides of Oblivion">
                         <p>Stranded on an island in the middle of nowhere with Mother Nature trying to kill you. Prepare for coming storms and find your way off the island!</p>
                         <p>...</p>
                     </div>
                     
-                    <div class="project" id="project-image-3" onclick="openOverlay('project-image-3', 'Windows / PC', 'MonoGame / C#', 'https://mm-13.itch.io/smack-n-snatch')">
+                    <div class="project" id="project-image-3" onclick="openOverlay('project-image-3')">
                         <h4>Smack 'n' Snatch</h4>
                         <img class="project-image" src="Images/zYpPY2.png" alt="Smack 'n' Snatch">
                         <p>You're a forest loner living away from civilisation. Defend against waves of squirrels stealing your items and hold out for as long as you can!</p>
@@ -46,13 +46,13 @@
                 </div>
                 <h3>Personal Games</h3>
                 <div class="projects">
-                    <div class="project" id="project-image-4" onclick="openOverlay('project-image-4', 'Windows / PC', 'MonoGame / C#', 'https://mm-13.itch.io/asteroid-trap')">
+                    <div class="project" id="project-image-4" onclick="openOverlay('project-image-4')">
                         <h4>Asteroid Trap</h4>
                         <img class="project-image" src="Images/AsteroidTrap.png" alt="Asteroid Trap">
                         <p>A simple space shooter game, but why don't you see who can get the highest score... You or one of your friends?</p>
                         <p>...</p>
                     </div>
-                    <div class="project" id="project-image-5" onclick="openOverlay('project-image-5', 'Windows / PC / Web', 'Python' , 'https://mm-13.itch.io/slither-n-chomp')">
+                    <div class="project" id="project-image-5" onclick="openOverlay('project-image-5')">
                         <h4>Slither 'n' Chomp</h4>
                         <img class="project-image" src="Images/SlithernChomp.png" alt="SlithernChomp">
                         <p>A python Snake game where an enemy is trying to steal your food. Get the foost as fast as possible to not starve to death!</p>
@@ -85,9 +85,14 @@
                         <p id="overlay-description"></p>
                         <p><strong>Platform:</strong> <span id="overlay-platform"></span></p>
                         <p><strong>Language:</strong> <span id="overlay-language"></span></p>
-                        <a id="overlay-download" href="#" target="_blank"><button>Download here!</button></a>
+                        <div id="overlay-buttons">
+                            <a id="overlay-download" href="#" target="_blank"><button>Download</button></a>
+                            <a id="overlay-play" href="#" target="_blank" style="display: none;"><button>Play</button></a>
+                        </div>
+                        <p id="overlay-group" style="display: none; font-style: italic; color: #f4f4f4;"></p>
                     </div>
                 </div>
+                
 
             </section>
         </main>
@@ -98,30 +103,109 @@
 </body>
 </html>
 <script>
-    function openOverlay(projectId, platform, language, downloadLink) {
-    const overlay = document.getElementById('overlay');
-    const project = document.getElementById(projectId);
+    const projectsData = [
+        {
+            id: "project-image-1",
+            title: "Bonkers for Loot",
+            description: "A couch co-op game where you play as sliding penguins against each other to catch the most amount of fish. Fight for your fish or slide trying!",
+            image: "Images/BonkersForLoot.png",
+            platform: "Windows / PC",
+            language: "Unity / C#",
+            downloadLink: "https://scuttsy.itch.io/bonkers-for-loot",
+            group: true
+        },
+        {
+            id: "project-image-2",
+            title: "Tides of Oblivion",
+            description: "Stranded on an island in the middle of nowhere with Mother Nature trying to kill you. Prepare for coming storms and find your way off the island!",
+            image: "Images/TidesOfOblivion.png",
+            platform: "Windows / PC",
+            language: "Unity / C#",
+            downloadLink: "https://mm-13.itch.io/tides-of-oblivion",
+            group: true
+        },
+        {
+            id: "project-image-3",
+            title: "Smack 'n' Snatch",
+            description: "You're a forest loner living away from civilisation. Defend against waves of squirrels stealing your items and hold out for as long as you can!",
+            image: "Images/zYpPY2.png",
+            platform: "Windows / PC",
+            language: "MonoGame / C#",
+            downloadLink: "https://mm-13.itch.io/smack-n-snatch",
+            group: true
+        },
+        {
+            id: "project-image-4",
+            title: "Asteroid Trap",
+            description: "A simple space shooter game, but why don't you see who can get the highest score... You or one of your friends?",
+            image: "Images/AsteroidTrap.png",
+            platform: "Windows / PC",
+            language: "MonoGame / C#",
+            downloadLink: "https://mm-13.itch.io/asteroid-trap",
+            group: false
+        },
+        {
+            id: "project-image-5",
+            title: "Slither 'n' Chomp",
+            description: "A python Snake game where an enemy is trying to steal your food. Get the foost as fast as possible to not starve to death!",
+            image: "Images/SlithernChomp.png",
+            platform: "Windows / PC / Web",
+            language: "Python",
+            downloadLink: "https://mm-13.itch.io/slither-n-chomp",
+            playLink: "https://mm-13.github.io/Slither-'n-Chomp/build/web/index.html",
+            group: false
+        }
+    ];
+</script>
 
-    if (!project) return; // Safeguard if the project doesn't exist
+<script>
+    function openOverlay(projectId) {
+        const overlay = document.getElementById('overlay');
+        const project = projectsData.find(p => p.id === projectId);
 
-    const title = project.querySelector('h4').textContent;
-    const description = project.querySelector('p').textContent;
-    const imageSource = project.querySelector('.project-image').src;
+        if (!project) return; // Safeguard if the project isn't found
 
-    // Populate overlay content
-    overlay.querySelector('h2').textContent = title;
-    overlay.querySelector('p').textContent = description;
-    overlay.querySelector('img').src = imageSource;
-    overlay.querySelector('a').href = downloadLink;
+        // Populate basic information
+        overlay.querySelector('#overlay-title').textContent = project.title;
+        overlay.querySelector('#overlay-description').textContent = project.description;
+        overlay.querySelector('#overlay-image').src = project.image;
+        overlay.querySelector('#overlay-platform').textContent = project.platform;
+        overlay.querySelector('#overlay-language').textContent = project.language;
 
-    // Show the overlay
-    overlay.style.display = 'block';
+        // Handle download button
+        const downloadButton = overlay.querySelector('#overlay-download');
+        downloadButton.href = project.downloadLink;
+        downloadButton.style.display = 'inline-block';
+
+        // Handle optional play button
+        const playButton = overlay.querySelector('#overlay-play');
+        if (project.playLink) {
+            playButton.href = project.playLink;
+            playButton.style.display = 'inline-block'; // Ensure play button is visible
+        } else {
+            playButton.style.display = 'none'; // Hide play button if no play link
+        }
+
+        // Handle group project note
+        const groupNote = overlay.querySelector('#overlay-group');
+        groupNote.style.display = 'none'; // Reset visibility
+        groupNote.textContent = '';       // Clear previous content
+
+        if (project.group) {
+            groupNote.textContent = "This was a group project.";
+            groupNote.style.display = 'block';
+        }
+
+        // Show the overlay
+        overlay.style.display = 'block';
     }
 
     function closeOverlay() {
         const overlay = document.getElementById('overlay');
         overlay.style.display = 'none'; // Hide overlay on close
     }
+
+
 
     function myFunction(webiste) {
         window.open(webiste, "_blank");
