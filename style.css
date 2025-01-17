@@ -61,6 +61,17 @@ body {
     padding-bottom: 30px;
 }
 
+/* Add styles for social media links at the bottom */ 
+.sidebar .socials { 
+    position: absolute; 
+    bottom: 20px; 
+    width: 100%; 
+} 
+.sidebar .socials li { 
+    display: inline-block; 
+    margin-right: 10px; 
+}
+
 /* General styles */
 
 header {
@@ -175,15 +186,17 @@ footer p {
     text-align: center;
 }
 
+/* Ensure links inside the overlay content have no additional margin or centering */
 .overlay-content a {
     text-align: center;
     text-decoration: none;
-    margin: 0 auto;
+    margin: 0;
 }
 
+/* Style the buttons inside the overlay content */
 .overlay-content button {
-    display: block;
-    margin: 20px auto;
+    display: inline-block;  /* Ensures buttons are treated as blocks */
+    margin: 0 10px;         /* Provide a consistent margin between buttons */
     padding: 10px 20px;
     background-color: #569cd6;
     color: #d4d4d4;
@@ -197,8 +210,34 @@ footer p {
 }
 
 .overlay-content button:hover {
-    background-color: #4178a3;
+    background-color: #0056b3;
 }
+
+/* Style the container that holds the buttons */
+#overlay-buttons {
+    display: flex;
+    justify-content: center;   /* Centers the buttons as a group */
+    align-items: center;       /* Vertically centers the buttons */
+    gap: 10px;                 /* Consistent space between buttons */
+    flex-wrap: nowrap;         /* Ensures buttons stay on one line */
+}
+
+/* Remove extra button styling for the play and download buttons */
+#overlay-buttons a button {
+    padding: 10px 15px; 
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    background-color: #569cd6;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#overlay-buttons a button:hover {
+    background-color: #0056b3;
+}
+
 
 .close {
     color: #d4d4d4;
