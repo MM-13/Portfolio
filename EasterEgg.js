@@ -8,7 +8,7 @@ let gameOver = false;
 let score = 0;
 let isJumping = false;
 let lastObstacleTime = 0;
-let obstacleInterval = Math.random() * 1000 + 500;
+let obstacleInterval = Math.random() * 1000 + 1000;
 
 // Create the player
 let player = {
@@ -97,7 +97,7 @@ function updateGame() {
     if (Date.now() - lastObstacleTime > obstacleInterval) {
         createObstacle();
         lastObstacleTime = Date.now();
-        obstacleInterval = Math.random() * 1000 + 500; // Recalculate the interval
+        obstacleInterval = Math.random() * 1000 + 1000; // Recalculate the interval
     }
 
     // Repeat the update
