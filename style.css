@@ -158,6 +158,80 @@ section a:hover {
     max-width: 40%;
 }
 
+/* General form styling */
+form {
+    display: flex;
+    flex-direction: column; /* Stack the form fields vertically */
+    gap: 1rem; /* Space between form elements */
+    margin: 2rem 0; /* Space around the form */
+    padding: 1.5rem;
+    background-color: #f5f5f5; /* Light gray background */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Form labels */
+form label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Text inputs and textarea */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input hover and focus effects */
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: #569cd6;
+    box-shadow: 0 0 4px #569cd6;
+    outline: none;
+}
+
+/* Textarea styling */
+form textarea {
+    resize: none; /* Prevent resizing for consistency */
+    height: 120px; /* Set a default height */
+}
+
+form button[type="submit"] {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #569cd6;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #4178a9;
+}
+
+
+/* Adjust form container spacing */
+.content form {
+    max-width: 600px; /* Limit the form's width */
+    margin: 0 auto;
+    /*margin-right: 0;*/
+}
+
+
 /* Footer styles */
 footer {
     position: fixed;
