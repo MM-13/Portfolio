@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Matthias Maes</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="script" href="projectsData.js">
+    <link rel="script" href="functionHandler.js">
 </head>
 <body>
     <div class="container">
@@ -81,19 +83,25 @@
                     <div class="overlay-content">
                         <span class="close" onclick="closeOverlay()">&times;</span>
                         <h2 id="overlay-title"></h2>
-                        <img id="overlay-image" src="" alt="">
+                        <!-- <img id="overlay-image" src="" alt=""> -->
+                        <!-- Add a div for the image slider inside the overlay-content -->
+                        <div class="slider-container">
+                            <img id="overlay-slider-image" class="slider-image" src="" alt="">
+                            <div class="slider-nav">
+                                <button id="prev" onclick="prevImage()">&#10094;</button>
+                                <button id="next" onclick="nextImage()">&#10095;</button>
+                            </div>
+                        </div>
                         <p id="overlay-description"></p>
                         <p><strong>Platform:</strong> <span id="overlay-platform"></span></p>
                         <p><strong>Language:</strong> <span id="overlay-language"></span></p>
+                        <p id="overlay-group" style="display: none; font-style: italic; color: #f4f4f4;"></p>
                         <div id="overlay-buttons">
                             <a id="overlay-download" href="#" target="_blank"><button>Download</button></a>
                             <a id="overlay-play" href="#" target="_blank" style="display: none;"><button>Play</button></a>
                         </div>
-                        <p id="overlay-group" style="display: none; font-style: italic; color: #f4f4f4;"></p>
                     </div>
                 </div>
-                
-
             </section>
         </main>
         <footer>
@@ -102,113 +110,7 @@
     </div>
 </body>
 </html>
-<script>
-    const projectsData = [
-        {
-            id: "project-image-1",
-            title: "Bonkers for Loot",
-            description: "A couch co-op game where you play as sliding penguins against each other to catch the most amount of fish. Fight for your fish or slide trying!",
-            image: "Images/BonkersForLoot.png",
-            platform: "Windows / PC",
-            language: "Unity / C#",
-            downloadLink: "https://scuttsy.itch.io/bonkers-for-loot",
-            group: true
-        },
-        {
-            id: "project-image-2",
-            title: "Tides of Oblivion",
-            description: "Stranded on an island in the middle of nowhere with Mother Nature trying to kill you. Prepare for coming storms and find your way off the island!",
-            image: "Images/TidesOfOblivion.png",
-            platform: "Windows / PC",
-            language: "Unity / C#",
-            downloadLink: "https://mm-13.itch.io/tides-of-oblivion",
-            group: true
-        },
-        {
-            id: "project-image-3",
-            title: "Smack 'n' Snatch",
-            description: "You're a forest loner living away from civilisation. Defend against waves of squirrels stealing your items and hold out for as long as you can!",
-            image: "Images/zYpPY2.png",
-            platform: "Windows / PC",
-            language: "MonoGame / C#",
-            downloadLink: "https://mm-13.itch.io/smack-n-snatch",
-            group: true
-        },
-        {
-            id: "project-image-4",
-            title: "Asteroid Trap",
-            description: "A simple space shooter game, but why don't you see who can get the highest score... You or one of your friends?",
-            image: "Images/AsteroidTrap.png",
-            platform: "Windows / PC",
-            language: "MonoGame / C#",
-            downloadLink: "https://mm-13.itch.io/asteroid-trap",
-            group: false
-        },
-        {
-            id: "project-image-5",
-            title: "Slither 'n' Chomp",
-            description: "A python Snake game where an enemy is trying to steal your food. Get the foost as fast as possible to not starve to death!",
-            image: "Images/SlithernChomp.png",
-            platform: "Windows / PC / Web",
-            language: "Python",
-            downloadLink: "https://mm-13.itch.io/slither-n-chomp",
-            playLink: "https://mm-13.github.io/Slither-'n-Chomp/build/web/index.html",
-            group: false
-        }
-    ];
-</script>
+<script src="projectsData.js"></script>
+<script src="functionHandler.js"></script>
 
-<script>
-    function openOverlay(projectId) {
-        const overlay = document.getElementById('overlay');
-        const project = projectsData.find(p => p.id === projectId);
-
-        if (!project) return; // Safeguard if the project isn't found
-
-        // Populate basic information
-        overlay.querySelector('#overlay-title').textContent = project.title;
-        overlay.querySelector('#overlay-description').textContent = project.description;
-        overlay.querySelector('#overlay-image').src = project.image;
-        overlay.querySelector('#overlay-platform').textContent = project.platform;
-        overlay.querySelector('#overlay-language').textContent = project.language;
-
-        // Handle download button
-        const downloadButton = overlay.querySelector('#overlay-download');
-        downloadButton.href = project.downloadLink;
-        downloadButton.style.display = 'inline-block';
-
-        // Handle optional play button
-        const playButton = overlay.querySelector('#overlay-play');
-        if (project.playLink) {
-            playButton.href = project.playLink;
-            playButton.style.display = 'inline-block'; // Ensure play button is visible
-        } else {
-            playButton.style.display = 'none'; // Hide play button if no play link
-        }
-
-        // Handle group project note
-        const groupNote = overlay.querySelector('#overlay-group');
-        groupNote.style.display = 'none'; // Reset visibility
-        groupNote.textContent = '';       // Clear previous content
-
-        if (project.group) {
-            groupNote.textContent = "This was a group project.";
-            groupNote.style.display = 'block';
-        }
-
-        // Show the overlay
-        overlay.style.display = 'block';
-    }
-
-    function closeOverlay() {
-        const overlay = document.getElementById('overlay');
-        overlay.style.display = 'none'; // Hide overlay on close
-    }
-
-
-
-    function myFunction(webiste) {
-        window.open(webiste, "_blank");
-    }
-</script>
 

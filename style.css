@@ -1,13 +1,17 @@
 /* Global styles */
+* {
+    box-sizing: border-box;
+}
 
 body {
-    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
     min-width: 600px;
     background-color: #1e1e1e;
     color: #d4d4d4;
+    font-size: 16px; /* Base font size */
+    line-height: 1.5;
 }
 
 .container {
@@ -16,28 +20,27 @@ body {
 }
 
 /* Sidebar styles */
-
 .sidebar {
-    width: 15%;
+    width: 20%; /* Flexible scaling */
     min-width: 210px;
     background-color: #252526;
     border-right: 1px solid #3c3c3c;
-    padding: 0px 20px;
-    box-sizing: border-box;
+    padding: 0 1.25rem; /* 20px */
     overflow-y: auto;
 }
 
 .sidebar h1 {
     color: #569cd6;
+    font-size: clamp(1rem, 2vw, 1.375rem); /* ~16px to 22px */
 }
 
 .sidebar ul {
     list-style-type: circle;
-    padding-left: 20px;
+    padding-left: 1.25rem; /* 20px */
 }
 
 .sidebar ul li {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem; /* 10px */
 }
 
 .sidebar ul li a {
@@ -45,7 +48,7 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 120%;
+    font-size: 1.2rem; /* ~19.2px */
 }
 
 .sidebar ul li a:hover {
@@ -53,44 +56,44 @@ body {
     text-decoration: underline;
 }
 
-.content {
-    width: 85%;
-    padding: 0px 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-    padding-bottom: 30px;
+/* Social media links at the bottom */
+.sidebar .socials {
+    position: absolute;
+    bottom: 1.25rem; /* 20px */
+    width: 100%;
 }
 
-/* Add styles for social media links at the bottom */ 
-.sidebar .socials { 
-    position: absolute; 
-    bottom: 20px; 
-    width: 100%; 
-} 
-.sidebar .socials li { 
-    display: inline-block; 
-    margin-right: 10px; 
+.sidebar .socials li {
+    display: inline-block;
+    margin-right: 0.625rem; /* 10px */
+}
+
+.content {
+    width: 80%; /* Flexible scaling */
+    padding: 0 1.25rem 1.875rem; /* 20px 30px */
+    overflow-y: auto;
 }
 
 /* General styles */
-
 header {
     border-bottom: 2px solid #3c3c3c;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    padding-bottom: 0.625rem; /* 10px */
+    margin-bottom: 1.25rem; /* 20px */
 }
 
 header h1 {
     color: #569cd6;
     margin: 0;
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem); /* ~20px to 24px */
 }
 
 header p {
-    margin: 5px 0 0 0;
+    margin: 0.3125rem 0 0; /* 5px */
 }
 
 section h2 {
     color: #569cd6;
+    font-size: clamp(1rem, 2vw, 1.25rem); /* ~16px to 20px */
 }
 
 section a {
@@ -104,21 +107,20 @@ section a:hover {
 }
 
 /* Projects styles */
-
 .projects {
     display: flex;
     flex-wrap: wrap;
+    gap: 0.625rem; /* 10px */
 }
 
 .project {
     background-color: #2d2d2d;
-    width: calc(33.333% - 10px);
+    width: calc(33.333% - 1rem); /* Flexible scaling */
     max-width: 50%;
-    padding: 0px 20px;
-    margin-right: 10px;
-    box-sizing: border-box;
+    padding: 1.25rem; /* 20px */
     border-radius: 5px;
     flex-grow: 1;
+    transition: background-color 0.3s;
 }
 
 .project:hover {
@@ -126,13 +128,12 @@ section a:hover {
 }
 
 .project p {
-    font-size: small;
+    font-size: 0.875rem; /* ~14px */
 }
 
 .project-image {
-    min-width: 100%;
-    max-width: 100%;
-    max-height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .project-image-web {
@@ -140,7 +141,6 @@ section a:hover {
 }
 
 /* Footer styles */
-
 footer {
     position: fixed;
     width: 100%;
@@ -152,32 +152,32 @@ footer {
 }
 
 footer p {
-    margin: 5px;
-    font-size: small;
+    margin: 0.3125rem; /* 5px */
+    font-size: 0.875rem; /* ~14px */
 }
 
 /* Overlay styles */
-
 .overlay {
     display: none;
     position: absolute;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
+    align-items: center;
+    justify-content: center;
     width: 80%;
     height: 80%;
     top: 50%;
     left: 50%;
-    padding: 0px 20px;
+    padding: 0 1.25rem; /* 20px */
     transform: translate(-50%, -50%);
     background-color: rgb(71, 71, 71);
     z-index: 2;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
+    overflow-y: auto;
 }
 
 .overlay img {
-    min-width: 40%;
-    max-width: 40%;
+    width: 75%;
+    height: auto;
     display: block;
     margin: 0 auto;
 }
@@ -186,22 +186,16 @@ footer p {
     text-align: center;
 }
 
-/* Ensure links inside the overlay content have no additional margin or centering */
 .overlay-content a {
-    text-align: center;
     text-decoration: none;
     margin: 0;
 }
 
-/* Style the buttons inside the overlay content */
 .overlay-content button {
-    display: inline-block;  /* Ensures buttons are treated as blocks */
-    margin: 0 10px;         /* Provide a consistent margin between buttons */
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem; /* 10px 20px */
     background-color: #569cd6;
     color: #d4d4d4;
     text-transform: uppercase;
-    text-decoration: none;
     border: none;
     border-radius: 5px;
     font-weight: bold;
@@ -213,19 +207,16 @@ footer p {
     background-color: #0056b3;
 }
 
-/* Style the container that holds the buttons */
 #overlay-buttons {
     display: flex;
-    justify-content: center;   /* Centers the buttons as a group */
-    align-items: center;       /* Vertically centers the buttons */
-    gap: 10px;                 /* Consistent space between buttons */
-    flex-wrap: nowrap;         /* Ensures buttons stay on one line */
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem; /* 10px */
 }
 
-/* Remove extra button styling for the play and download buttons */
 #overlay-buttons a button {
-    padding: 10px 15px; 
-    font-size: 14px;
+    padding: 0.625rem 0.9375rem; /* 10px 15px */
+    font-size: 0.875rem; /* ~14px */
     cursor: pointer;
     border: none;
     background-color: #569cd6;
@@ -238,11 +229,10 @@ footer p {
     background-color: #0056b3;
 }
 
-
 .close {
     color: #d4d4d4;
     float: right;
-    font-size: 28px;
+    font-size: 1.75rem; /* ~28px */
     font-weight: bold;
     cursor: pointer;
 }
@@ -254,22 +244,20 @@ footer p {
 }
 
 /* Resume styles */
-
 .resume-header {
     display: flex;
-    justify-content: space-between; /* Aligns items to the ends */
-    align-items: center; /* Vertically centers the items */
-    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.625rem; /* 10px */
 }
 
 .global-container {
     max-width: 55%;
 }
 
-/* Ensure the PDF viewer has a clean layout */
 .pdf-container {
     width: 100%;
-    height: 1200px; /* Adjust height as needed */
+    height: 1200px;
     border: 1px solid #d4d4d4;
     border-radius: 8px;
     overflow: hidden;
@@ -278,12 +266,11 @@ footer p {
 
 .cta {
     text-align: right;
-    text-decoration: none;
 }
 
 .cta button {
     display: block;
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem; /* 10px 20px */
     background-color: #569cd6;
     color: #fff;
     text-transform: uppercase;
@@ -296,4 +283,142 @@ footer p {
 
 .cta button:hover {
     background-color: #4178a3;
+}
+
+
+/* Slider container styles */
+.slider-container {
+    position: relative;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+.slider-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-nav button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.slider-nav button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+/* Mobile styles and layout adjustments */
+@media (max-width: 768px) {
+    /* Adjust container layout */
+    .container {
+        flex-direction: column;
+    }
+
+    /* Sidebar adjustments */
+    .sidebar {
+        width: 100%; /* Full width on mobile */
+        min-height: 20vh; /* At least 60% of the viewport height */
+        position: relative;
+    }
+
+    .sidebar h1 {
+        font-size: 1.2rem; /* ~19px */
+    }
+
+    .sidebar ul li a {
+        font-size: 1rem; /* ~16px */
+    }
+
+    /* Content adjustments */
+    .content {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Projects adjustments */
+    .projects {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .project {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .project-image-web {
+        max-width: 60%; /* Adjust image scaling */
+    }
+
+    .global-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further font scaling for very small screens */
+    body {
+        font-size: 14px;
+    }
+
+    .sidebar {
+        min-height: 20vh; /* Reinforce minimum height */
+        padding: 10px;
+    }
+
+    .sidebar h1 {
+        font-size: 1rem;
+    }
+
+    .sidebar ul li a {
+        font-size: 0.9rem;
+    }
+
+    .content header h1 {
+        font-size: 1.2rem; /* ~19px */
+    }
+
+    .projects {
+        gap: 10px;
+    }
+
+    .project {
+        padding: 10px;
+    }
+
+    .overlay {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .overlay img {
+        width: 80%;
+    }
+
+    #overlay-buttons a button {
+        font-size: 0.8rem;
+    }
+
+    .global-container {
+        max-width: 100%;
+    }
 }
