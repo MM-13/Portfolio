@@ -445,7 +445,7 @@ footer p {
     /* Sidebar adjustments */
     .sidebar {
         width: 100%; /* Full width on mobile */
-        min-height: 20vh; /* At least 60% of the viewport height */
+        min-height: 27.5vh; /* At least 60% of the viewport height */
         position: relative;
     }
 
@@ -507,7 +507,7 @@ footer p {
     }
 
     .sidebar {
-        min-height: 20vh; /* Reinforce minimum height */
+        min-height: 30vh; /* Reinforce minimum height */
         padding: 10px;
     }
 
