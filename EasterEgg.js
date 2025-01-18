@@ -1,8 +1,8 @@
 // Initial game setup
-let gameContainer = document.getElementById('game-container');
-let canvas = document.getElementById('gameCanvas');
-let ctx = canvas.getContext('2d');
-let scoreElement = document.getElementById('score');
+const gameContainer = document.getElementById('game-container');
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+const scoreElement = document.getElementById('score');
 
 let gameOver = false;
 let score = 0;
@@ -11,7 +11,7 @@ let lastObstacleTime = 0;
 let obstacleInterval = Math.random() * 1000 + 1000;
 
 // Create the player
-let player = {
+const player = {
     x: 50,
     y: canvas.height - 50,
     width: 30,
@@ -23,11 +23,11 @@ let player = {
 };
 
 // Create obstacles
-let obstacles = [];
+const obstacles = [];
 
 function createObstacle() {
-    let height = Math.floor(Math.random() * 30) + 20;
-    let obstacle = {
+    const height = Math.floor(Math.random() * 30) + 20;
+    const obstacle = {
         x: canvas.width,
         y: canvas.height - height,
         width: 20,
@@ -40,7 +40,7 @@ function createObstacle() {
 // Update game elements
 function updateGame() {
     if (gameOver) {
-        alert("Game Over! Your score: " + score);
+        alert(`Game Over! Your score: ${score}`);
         resetGame();
         return;
     }
@@ -55,49 +55,45 @@ function updateGame() {
     }
 
     player.velocityY += player.gravity;
-    player.y += player.velocityY;
-
-    // Prevent falling below the ground
-    if (player.y > canvas.height - player.height) {
-        player.y = canvas.height - player.height;
-        player.velocityY = 0;
-    }
+    player.y = Math.min(player.y + player.velocityY, canvas.height - player.height);
 
     // Draw player
     ctx.fillStyle = player.color;
     ctx.fillRect(player.x, player.y, player.width, player.height);
 
     // Move and draw obstacles
-    for (let i = 0; i < obstacles.length; i++) {
-        let obstacle = obstacles[i];
-        obstacle.x -= 2; // Adjust speed for smoother gameplay
+    const remainingObstacles = obstacles.filter(obstacle => {
+        obstacle.x -= 2;
 
-        ctx.fillStyle = obstacle.color;
-        ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+        if (obstacle.x + obstacle.width > 0) {
+            ctx.fillStyle = obstacle.color;
+            ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
 
-        // Check for collision
-        if (
-            player.x < obstacle.x + obstacle.width &&
-            player.x + player.width > obstacle.x &&
-            player.y < obstacle.y + obstacle.height &&
-            player.y + player.height > obstacle.y
-        ) {
-            gameOver = true;
-        }
-
-        // Remove obstacles that have gone off screen
-        if (obstacle.x + obstacle.width < 0) {
-            obstacles.splice(i, 1);
+            // Check for collision
+            if (
+                player.x < obstacle.x + obstacle.width &&
+                player.x + player.width > obstacle.x &&
+                player.y + player.height > obstacle.y &&
+                player.y < obstacle.y + obstacle.height
+            ) {
+                gameOver = true;
+            }
+        } else {
             score += 10;
-            scoreElement.textContent = "Score: " + score;
+            scoreElement.textContent = `Score: ${score}`;
         }
-    }
+
+        return obstacle.x + obstacle.width > 0;
+    });
+
+    obstacles.length = 0; // Clear obstacles array
+    obstacles.push(...remainingObstacles);
 
     // Add new obstacles periodically
     if (Date.now() - lastObstacleTime > obstacleInterval) {
         createObstacle();
         lastObstacleTime = Date.now();
-        obstacleInterval = Math.random() * 1000 + 1000; // Recalculate the interval
+        obstacleInterval = Math.random() * 1000 + 1000;
     }
 
     // Repeat the update
@@ -108,14 +104,13 @@ function updateGame() {
 
 // Start game loop
 function startGame() {
-    gameOver = false;
+    gameContainer.classList.remove('hidden');
     score = 0;
-    scoreElement.textContent = "Score: " + score;
+    scoreElement.textContent = "Score: 0";
     player.y = canvas.height - player.height;
     player.velocityY = 0;
-    obstacles = [];
+    obstacles.length = 0; // Clear obstacles array
     lastObstacleTime = Date.now();
-    gameContainer.classList.remove('hidden');
     updateGame();
 }
 
@@ -126,14 +121,10 @@ function resetGame() {
 }
 
 // Trigger game on secret action (e.g., clicking the name)
-document.querySelector('h1').addEventListener('click', function () {
-    startGame(); // Start the game when the name is clicked
-});
+document.querySelector('h1').addEventListener('click', startGame);
 
 // Close the game when the close button is clicked
-document.getElementById('close-game').addEventListener('click', function () {
-    resetGame();
-});
+document.getElementById('close-game').addEventListener('click', resetGame);
 
 // Jump on spacebar press
 document.addEventListener('keydown', function (e) {
@@ -141,3 +132,4 @@ document.addEventListener('keydown', function (e) {
         isJumping = true;
     }
 });
+
