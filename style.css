@@ -59,18 +59,36 @@ body {
 /* Social media links at the bottom */
 .sidebar .socials {
     position: absolute;
-    bottom: 1.25rem; /* 20px */
+    bottom: 1.25rem;
     width: 100%;
+    display: flex;
+    gap: 0.625rem;
+}
+
+.sidebar .socials li img {
+    max-width: 2rem; 
+    height: auto; 
 }
 
 .sidebar .socials li {
+    list-style: none;
+}
+
+.sidebar .socials li a {
     display: inline-block;
-    margin-right: 0.625rem; /* 10px */
+}
+
+.sidebar .socials li a:hover {
+    color: #569cd6;
+}
+
+.sidebar .socials li a:hover img {
+    filter: brightness(0) saturate(100%) invert(34%) sepia(84%) saturate(2213%) hue-rotate(192deg) brightness(92%) contrast(101%);
 }
 
 .content {
-    width: 80%; /* Flexible scaling */
-    padding: 0 1.25rem 1.875rem; /* 20px 30px */
+    width: 80%; 
+    padding: 0 1.25rem 1.875rem; 
     overflow-y: auto;
 }
 
@@ -84,7 +102,7 @@ header {
 header h1 {
     color: #569cd6;
     margin: 0;
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem); /* ~20px to 24px */
+    font-size: clamp(1rem, 2vw, 1.375rem); /* ~16px to 22px */
 }
 
 header p {
@@ -93,7 +111,7 @@ header p {
 
 section h2 {
     color: #569cd6;
-    font-size: clamp(1rem, 2vw, 1.25rem); /* ~16px to 20px */
+    font-size: clamp(1rem, 2vw, 1.375rem); /* ~16px to 22px */
 }
 
 section a {
@@ -252,7 +270,7 @@ footer p {
 }
 
 .global-container {
-    max-width: 55%;
+    max-width: 100%;
 }
 
 .pdf-container {
