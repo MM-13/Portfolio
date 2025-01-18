@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Matthias Maes</title>
-    <link rel="icon" type="image/x-icon" href="Images/Personal/Picture.ico">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Images/Personal/Picture2.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="game.css">
 </head>
 <body>
     <div class="container">
@@ -17,6 +18,7 @@
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="games.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="interests.html">Interests</a></li>
             </ul>
         </aside>
         <main class="content">
@@ -36,8 +38,15 @@
             </section>
         </main>
         <footer>
-            <p>&copy; 2024 Matthias Maes. All rights reserved.</p>
+            <p>&copy; 2025 Matthias Maes</p>
         </footer>
+    </div>
+    <div id="game-container" class="hidden">
+        <span id="close-game" class="close-btn">&times;</span>
+        <canvas id="gameCanvas" width="500" height="300"></canvas>
+        <p>Use the spacebar to jump!</p>
+        <p id="score">Score: 0</p>
     </div>
 </body>
 </html>
+<script src="EasterEgg.js"></script>
