@@ -3,11 +3,19 @@
     box-sizing: border-box;
 }
 
+/* Apply to headings and project descriptions */
+h1, h2, h3, h4, pre, .project p, code {
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    font-size: 0.95rem; /* Adjust for VS Code-like sizing */
+    color: #d4d4d4; /* Ensure consistent color */
+    border-radius: 4px;
+}
+
 body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
-    min-width: 600px;
+    min-width: 480px;
     background-color: #1e1e1e;
     color: #d4d4d4;
     font-size: 16px; /* Base font size */
@@ -22,7 +30,7 @@ body {
 /* Sidebar styles */
 .sidebar {
     width: 20%; /* Flexible scaling */
-    min-width: 210px;
+    min-width: 200px;
     background-color: #252526;
     border-right: 1px solid #3c3c3c;
     padding: 0 1.25rem; /* 20px */
@@ -48,7 +56,7 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 1.2rem; /* ~19.2px */
+    font-size: clamp(1rem, 2vw, 1.200rem); /* ~16px to 20px */
 }
 
 .sidebar ul li a:hover {
@@ -59,10 +67,11 @@ body {
 /* Social media links at the bottom */
 .sidebar .socials {
     position: absolute;
+    max-width: 16.5%;
     bottom: 1.25rem;
-    width: 100%;
     display: flex;
     gap: 0.625rem;
+    justify-content: center;
 }
 
 .sidebar .socials li img {
@@ -414,6 +423,16 @@ footer p {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* Activity bar at the top */
+.activity-bar {
+    height: 3px; /* Thin like VS Code */
+    width: 100%;
+    background-color: #569cd6; /* Signature VS Code blue */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
 
 
 /* Mobile styles and layout adjustments */
@@ -462,6 +481,22 @@ footer p {
 
     .global-container {
         max-width: 100%;
+    }
+
+    .sidebar .socials {
+        position: static; /* Remove absolute positioning */
+        max-width: 100%; /* Allow full width */
+        margin-top: 1rem; /* Add spacing from other elements */
+        justify-content: left;
+    }
+
+    .sidebar .socials li img {
+        max-width: 1.5rem; /* Reduce icon size for mobile */
+        height: auto;
+    }
+
+    .sidebar .socials li {
+        margin: 0; /* Remove any additional margin */
     }
 }
 
@@ -512,5 +547,13 @@ footer p {
 
     .global-container {
         max-width: 100%;
+    }
+
+    .sidebar .socials {
+        gap: 0.5rem; /* Reduce gap between icons */
+    }
+
+    .sidebar .socials li img {
+        max-width: 1.25rem; /* Slightly smaller icons */
     }
 }
