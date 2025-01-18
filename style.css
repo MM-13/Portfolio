@@ -15,7 +15,6 @@ body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
-    min-width: 480px;
     background-color: #1e1e1e;
     color: #d4d4d4;
     font-size: 16px; /* Base font size */
@@ -500,14 +499,14 @@ footer p {
     }
 }
 
-@media (max-width: 480px) {
+@media only screen and (min-width: 375px) and (max-width: 812px) {
     /* Further font scaling for very small screens */
     body {
         font-size: 14px;
     }
 
     .sidebar {
-        min-height: 30vh; /* Reinforce minimum height */
+        min-height: 25vh; /* Reinforce minimum height */
         padding: 10px;
     }
 
