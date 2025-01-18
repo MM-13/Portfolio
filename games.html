@@ -9,6 +9,16 @@
     <link rel="script" href="projectsData.js">
     <link rel="script" href="functionHandler.js">
 </head>
+<style>
+    #overlay-play {
+        display: none;
+    }
+    #overlay-group {
+        display: none; 
+        font-style: italic; 
+        color: #f4f4f4;
+    }
+</style>
 <body>
     <div class="container">
         <aside class="sidebar">
@@ -97,10 +107,10 @@
                         <p id="overlay-description"></p>
                         <p><strong>Platform:</strong> <span id="overlay-platform"></span></p>
                         <p><strong>Language:</strong> <span id="overlay-language"></span></p>
-                        <p id="overlay-group" style="display: none; font-style: italic; color: #f4f4f4;"></p>
+                        <p id="overlay-group"></p>
                         <div id="overlay-buttons">
                             <a id="overlay-download" href="#" target="_blank"><button>Download</button></a>
-                            <a id="overlay-play" href="#" target="_blank" style="display: none;"><button>Play</button></a>
+                            <a id="overlay-play" href="#" target="_blank"><button>Play</button></a>
                         </div>
                     </div>
                 </div>
