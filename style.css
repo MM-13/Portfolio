@@ -70,7 +70,7 @@ body {
     bottom: 1.25rem;
     display: flex;
     gap: 0.625rem;
-    justify-content: center;
+    margin-left: -16px;
 }
 
 .sidebar .socials li img {
@@ -132,6 +132,39 @@ section a:hover {
     text-decoration: underline;
 }
 
+/* Profile styles */
+#profile {
+    display: flex;
+    align-items: center; /* Align the items horizontally */
+    gap: 1rem; /* 20px */
+    margin-bottom: 1rem; /* 20px */
+    background-color: #2d2d2d;
+    border-radius: 5px;
+    padding: 1rem; /* 20px */
+}
+
+#profile-text {
+    display: flex;
+    flex-direction: column; /* Stack the text elements */
+    gap: 0.5rem; /* Space between the heading and the paragraph */
+}
+
+#profile h3 {
+    margin: 0; /* Remove any default margin */
+    font-size: 1.25rem; /* Adjust the size as needed */
+}
+
+#profile p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#profile-picture {
+    max-width: 25%;
+    height: auto;
+    border-radius: 5px;
+}
+
 /* Projects styles */
 .projects {
     display: flex;
@@ -173,7 +206,7 @@ form {
     gap: 1rem; /* Space between form elements */
     margin: 2rem 0; /* Space around the form */
     padding: 1.5rem;
-    background-color: #f5f5f5; /* Light gray background */
+    background-color: #3c3c3c; /* Light gray background */
     border: 1px solid #ddd; /* Subtle border */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
@@ -183,7 +216,7 @@ form {
 form label {
     font-size: 1rem;
     font-weight: bold;
-    color: #333;
+    color: #d4d4d4;
 }
 
 /* Text inputs and textarea */
@@ -195,7 +228,7 @@ form textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
-    background-color: #fff;
+    background-color: #d4d4d4;
     color: #333;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -219,7 +252,7 @@ form button[type="submit"] {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     font-weight: bold;
-    color: #fff;
+    color: #d4d4d4;
     background-color: #569cd6;
     border: none;
     border-radius: 4px;
@@ -320,7 +353,7 @@ footer p {
     cursor: pointer;
     border: none;
     background-color: #569cd6;
-    color: white;
+    color: #d4d4d4;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
@@ -372,7 +405,7 @@ footer p {
     display: block;
     padding: 0.625rem 1.25rem; /* 10px 20px */
     background-color: #569cd6;
-    color: #fff;
+    color: #d4d4d4;
     text-transform: uppercase;
     border: none;
     border-radius: 5px;
@@ -410,8 +443,8 @@ footer p {
 }
 
 .slider-nav button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.25);
+    color: d4d4d4;
     border: none;
     padding: 10px;
     cursor: pointer;
