@@ -37,7 +37,7 @@ body {
 }
 
 .sidebar h1 {
-    color: #569cd6;
+    color: #f4b962;
     font-size: clamp(1rem, 2vw, 1.375rem); /* ~16px to 22px */
 }
 
@@ -92,11 +92,12 @@ body {
 
 .sidebar .socials li a:hover img {
     filter: brightness(0) saturate(100%) invert(34%) sepia(84%) saturate(2213%) hue-rotate(192deg) brightness(92%) contrast(101%);
+    filter: brightness(0) saturate(100%) invert(98%) sepia(38%) saturate(7456%) hue-rotate(310deg) brightness(100%) contrast(92%);
 }
 
 .content {
     width: 80%; 
-    padding: 0 1.25rem 1.875rem; 
+    padding: 0 1.25rem 1rem; 
     overflow-y: auto;
 }
 
@@ -108,7 +109,7 @@ header {
 }
 
 header h1 {
-    color: #569cd6;
+    color: #f4b962;
     margin: 0;
     font-size: clamp(1rem, 2vw, 1.375rem); /* ~16px to 22px */
 }
@@ -118,7 +119,7 @@ header p {
 }
 
 section h2 {
-    color: #569cd6;
+    color: #f4b962;
     font-size: clamp(1rem, 2vw, 1.375rem); /* ~16px to 22px */
 }
 
@@ -138,6 +139,7 @@ section a:hover {
     align-items: center; /* Align the items horizontally */
     gap: 1rem; /* 20px */
     margin-bottom: 1rem; /* 20px */
+    margin-top: 1.25rem;
     background-color: #2d2d2d;
     border-radius: 5px;
     padding: 1rem; /* 20px */
@@ -186,8 +188,18 @@ section a:hover {
     background-color: #3c3c3c;
 }
 
+.project h4 {
+    color: #f4b962;
+    margin: 0;
+}
+
+.project a:hover {
+    text-decoration: none;
+}
+
 .project p {
     font-size: 0.875rem; /* ~14px */
+    margin: 0;
 }
 
 .project-image {
