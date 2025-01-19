@@ -10,6 +10,7 @@ function openOverlay(projectId) {
     // Set title, description, and other content
     overlay.querySelector('#overlay-title').textContent = project.title;
     overlay.querySelector('#overlay-description').textContent = project.description;
+    overlay.querySelector('#overlay-uniqueness').textContent = project.uniqueness;
     overlay.querySelector('#overlay-platform').textContent = project.platform;
     overlay.querySelector('#overlay-language').textContent = project.language;
 
@@ -17,6 +18,16 @@ function openOverlay(projectId) {
     currentImageIndex = 0;
     currentProjectId = projectId; // Store the current project id
     updateSliderImage(project.images);
+
+     // Handle group project note
+     const groupNote = overlay.querySelector('#overlay-group');
+     groupNote.style.display = 'none'; // Reset visibility
+     groupNote.textContent = '';       // Clear previous content
+
+     if (project.group) {
+         groupNote.textContent = "This was a group project / Game jam.";
+         groupNote.style.display = 'block';
+     }
 
     // Handle download button
     const downloadButton = overlay.querySelector('#overlay-download');

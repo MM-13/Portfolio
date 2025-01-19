@@ -6,6 +6,7 @@ const projectsData = [
         images: ["Images/BonkersForLoot.png"],
         platform: "Windows / PC",
         language: "Unity / C#",
+        uniqueness: "This was an exam project working in group, making a game, managing, source control and following the rules of game design.",
         downloadLink: "https://scuttsy.itch.io/bonkers-for-loot",
         group: true
     },
@@ -16,6 +17,7 @@ const projectsData = [
         images: ["Images/TidesOfOblivion.png", "Images/Tides of Oblivion/screen.png", "Images/Tides of Oblivion/trees.png", "Images/Tides of Oblivion/stones.png", "Images/Tides of Oblivion/crafting.png"],
         platform: "Windows / PC",
         language: "Unity / C#",
+        uniqueness: "This was made for a game jam where we had to make a game in less than 2 days.",
         downloadLink: "https://mm-13.itch.io/tides-of-oblivion",
         group: true
     },
@@ -26,16 +28,18 @@ const projectsData = [
         images: ["Images/zYpPY2.png", "Images/Smack n Snatch/start.png", "Images/Smack n Snatch/second.png", "Images/Smack n Snatch/smack.png", "Images/Smack n Snatch/UI.png"],
         platform: "Windows / PC",
         language: "MonoGame / C#",
+        uniqueness: "This was made for a game jam where we had to make a game in less than 5 days.",
         downloadLink: "https://mm-13.itch.io/smack-n-snatch",
         group: true
     },
     {
         id: "project-image-4",
         title: "Asteroid Trap",
-        description: "A simple space shooter game, but why don't you see who can get the highest score... You or one of your friends?, This was my first small game I made with MonoGame and C# after learning the basics of independent game development.",
+        description: "A simple space shooter game, but why don't you see who can get the highest score... You or one of your friends? This was my first small game I made with MonoGame and C# after learning the basics of independent game development.",
         images: ["Images/AsteroidTrap.png", "Images/Asteroid Trap/First.png", "Images/Asteroid Trap/Second.png", "Images/Asteroid Trap/Third.png"],
         platform: "Windows / PC",
         language: "MonoGame / C#",
+        uniqueness: "This was my first game I made with MonoGame and C#.",
         downloadLink: "https://mm-13.itch.io/asteroid-trap",
         group: false
     },
@@ -46,6 +50,7 @@ const projectsData = [
         images: ["Images/SlithernChomp.png"],
         platform: "Windows / PC / Web",
         language: "Python",
+        uniqueness: "I wanted to make the game playable in the browser using MVP pattern in Python.",
         downloadLink: "https://mm-13.itch.io/slither-n-chomp",
         playLink: "https://mm-13.github.io/Slither-'n-Chomp/build/web/index.html",
         group: false
