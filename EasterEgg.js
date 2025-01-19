@@ -16,7 +16,7 @@ const player = {
     y: canvas.height - 50,
     width: 30,
     height: 30,
-    color: 'green',
+    color: '#569cd6',
     velocityY: 0,
     gravity: 0.2,
     jumpForce: -7
@@ -32,19 +32,20 @@ function createObstacle() {
         y: canvas.height - height,
         width: 20,
         height: height,
-        color: 'red'
+        color: 'black'
     };
     obstacles.push(obstacle);
 }
 
 // Update game elements
 function updateGame() {
+    
     if (gameOver) {
         alert(`Game Over! Your score: ${score}`);
         resetGame();
         return;
     }
-
+    
     // Clear canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -100,6 +101,12 @@ function updateGame() {
     if (!gameOver) {
         requestAnimationFrame(updateGame);
     }
+
+    if (gameOver) {
+        alert(`Game Over! Your score: ${score}`);
+        resetGame();
+        return;
+    }
 }
 
 // Start game loop
@@ -117,7 +124,7 @@ function startGame() {
 // Reset game state
 function resetGame() {
     gameContainer.classList.add('hidden');
-    gameOver = true;
+    gameOver = false;
 }
 
 // Trigger game on secret action (e.g., clicking the name)
