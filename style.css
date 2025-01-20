@@ -128,8 +128,9 @@ h1, h2, h3, h4, pre, .project p, code {
 }
 
 /* Sidebar socials styles */
-.sidebar-socials {
+.sidebar1 {
     max-width: 5%; /* Set the width to 5% */
+    min-width: 3%;
     background-color: var(--sidebar-bg-color);
     border-right: 1px solid #3c3c3c;
     padding: var(--gap-small) 0; /* Vertical padding for spacing */
@@ -138,7 +139,7 @@ h1, h2, h3, h4, pre, .project p, code {
     align-items: center; /* Center items horizontally */
 }
 
-.sidebar-socials .socials {
+.sidebar1 .socials {
     list-style-type: none; /* Remove default list styling */
     margin: 0;
     padding: 0;
@@ -147,18 +148,18 @@ h1, h2, h3, h4, pre, .project p, code {
     gap: var(--gap-small); /* Add spacing between icons */
 }
 
-.sidebar-socials .socials li a {
+.sidebar1 .socials li a {
     display: inline-block;
     width: 2rem; /* Ensure icons are uniformly sized */
     height: 2rem;
 }
 
-.sidebar-socials .socials li img {
+.sidebar1 .socials li img {
     max-width: 100%; /* Icons fill their container */
     height: auto;
 }
 
-.sidebar-socials .socials li a:hover img {
+.sidebar1 .socials li a:hover img {
     filter: brightness(0) saturate(100%) invert(98%) sepia(38%) saturate(7456%) hue-rotate(310deg) brightness(100%) contrast(92%);
 }
 
