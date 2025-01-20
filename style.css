@@ -439,7 +439,7 @@ footer p {
 }
 
 .overlay-content button:hover {
-    background-color: #0056b3;
+    background-color: var(--hover-color);
 }
 
 #overlay-buttons {
