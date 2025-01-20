@@ -155,7 +155,7 @@ h1, h2, h3, h4, pre, .project p, code {
 }
 
 .sidebar-socials .socials li img {
-    max-width: 100%; /* Icons fill their container */
+    max-width: 5%; /* Icons fill their container */
     height: auto;
 }
 
