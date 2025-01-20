@@ -130,7 +130,6 @@ h1, h2, h3, h4, pre, .project p, code {
 /* Sidebar socials styles */
 .sidebar-socials {
     max-width: 5%; /* Set the width to 5% */
-    min-width: 50px; /* Optional: Ensure a minimum width for smaller screens */
     background-color: var(--sidebar-bg-color);
     border-right: 1px solid #3c3c3c;
     padding: var(--gap-small) 0; /* Vertical padding for spacing */
@@ -155,7 +154,7 @@ h1, h2, h3, h4, pre, .project p, code {
 }
 
 .sidebar-socials .socials li img {
-    max-width: 5%; /* Icons fill their container */
+    max-width: 100%; /* Icons fill their container */
     height: auto;
 }
 
