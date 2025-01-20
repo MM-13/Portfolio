@@ -3,23 +3,33 @@
     --main-bg-color: #1e1e1e;
     --main-text-color: #d4d4d4;
     --sidebar-bg-color: #252526;
+    --footer-bg-color: #181818;
     --header-color: #f4b962;
     --link-color: #f4b962; /*569cd6*/
     --hover-color: #a88044; /*4178a3*/
     --font-family: 'Courier New', Courier, monospace;
     --code-font-family: 'Consolas', 'Courier New', Courier, monospace;
-    --base-font-size: 16px;
-    --small-font-size: 0.95rem; /* ~14px */
-    --medium-font-size: 1.15rem; /* Adjust for VS Code-like sizing */
-    --large-font-size: 1.35rem; /* Adjust as needed */
-    --xlarge-font-size: clamp(1rem, 2vw, 1.5rem); /* 16px at 100%, 24px at 200% */
+    --base-font-size: 18px;
+    --small-font-size: 1rem; /* ~14px */
+    --medium-font-size: 1.25rem; /* Adjust for VS Code-like sizing */
+    --large-font-size: 1.5rem; /* Adjust as needed */
+    --xlarge-font-size: clamp(1rem, 2vw, 1.75rem); /* 16px at 100%, 24px at 200% */
     --border-radius: 5px;
-    --sidebar-width: 20%; /* Flexible scaling */
+    --sidebar-width: 15%; /* Flexible scaling */
     --sidebar-min-width: 200px;
     --sidebar-padding: 1.25rem;
     --gap-small: 0.625rem; /* 10px */
     --gap-medium: 1rem; /* 16px */
     --gap-large: 1.25rem; /* 20px */
+}
+
+#theme-toggle { 
+    background: none; 
+    border: none; 
+    color: var(--main-text-color); 
+    cursor: pointer; 
+    font-size: var(--xlarge-font-size);
+    bottom: 0;
 }
 
 /* Global styles */
@@ -131,13 +141,27 @@ h1, h2, h3, h4, pre, .project p, code {
 .sidebar1 {
     max-width: 5%; /* Set the width to 5% */
     min-width: 3%;
+    height: calc(100vh - 30px);
     background-color: var(--sidebar-bg-color);
     border-right: 1px solid #3c3c3c;
     padding: var(--gap-small) 0; /* Vertical padding for spacing */
     display: flex;
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center items horizontally */
+    justify-content: space-between; /* Space out top and bottom content */
+    padding-top: var(--gap-medium);
 }
+
+.sidebar1 .socials:first-child {
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    gap: var(--gap-small); /* Add spacing between icons */
+}
+
+.sidebar1 .socials:last-child {
+    margin-bottom: 0; /* Add space at the bottom */
+}
+
 
 .sidebar1 .socials {
     list-style-type: none; /* Remove default list styling */
@@ -157,6 +181,10 @@ h1, h2, h3, h4, pre, .project p, code {
 .sidebar1 .socials li img {
     max-width: 100%; /* Icons fill their container */
     height: auto;
+}
+
+.sidebar1 .socials li a img {
+    filter: brightness(0) saturate(50%) invert(98%) sepia(38%) saturate(7456%) hue-rotate(310deg) brightness(50%) contrast(92%);
 }
 
 .sidebar1 .socials li a:hover img {
@@ -207,7 +235,7 @@ section a:hover {
     align-items: center;
     gap: var(--gap-medium);
     margin: var(--gap-large) 0 var(--gap-medium);
-    background-color: #2d2d2d;
+    background-color: var(--sidebar-bg-color);
     border-radius: var(--border-radius);
     padding: var(--gap-large);
 }
@@ -242,7 +270,7 @@ section a:hover {
 }
 
 .project {
-    background-color: #2d2d2d;
+    background-color: var(--sidebar-bg-color);
     width: calc(33.333% - var(--gap-large));
     max-width: 50%;
     padding: var(--gap-large);
@@ -253,6 +281,7 @@ section a:hover {
 
 .project:hover {
     background-color: #3c3c3c;
+    cursor: pointer; 
 }
 
 .project h4 {
@@ -286,7 +315,7 @@ form {
     gap: var(--gap-large);
     margin: 2rem 0;
     padding: 1.5rem;
-    background-color: #3c3c3c;
+    background-color: var(--sidebar-bg-color);
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -352,11 +381,14 @@ footer {
     text-align: right;
     bottom: 0;
     border: 1px solid #3c3c3c;
-    background-color: #181818;
+    background-color: var(--footer-bg-color);
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Vertically centers content */
+    justify-content: flex-end; /* Aligns content to the right */
 }
 
 footer p {
-    margin: var(--gap-small);
+    margin: 0; /* Removes extra margin for perfect centering */
     font-size: var(--small-font-size);
 }
 
@@ -371,7 +403,7 @@ footer p {
     left: 50%;
     padding: 0 var(--sidebar-padding);
     transform: translate(-50%, -50%);
-    background-color: rgb(71, 71, 71);
+    background-color: #474747;
     z-index: 2;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     border-radius: var(--border-radius);
@@ -429,7 +461,7 @@ footer p {
 }
 
 #overlay-buttons a button:hover {
-    background-color: #0056b3;
+    background-color: var(--hover-color);
 }
 
 .close {
