@@ -93,7 +93,7 @@ h1, h2, h3, h4, pre, .project p, code {
 
 .sidebar h1 {
     color: var(--header-color);
-    font-size: var(--xlarge-font-size);
+    font-size: var(--large-font-size);
 }
 
 .sidebar ul {
@@ -110,7 +110,7 @@ h1, h2, h3, h4, pre, .project p, code {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: var(--xlarge-font-size);
+    font-size: var(--medium-font-size);
 }
 
 .sidebar ul li a:hover {
@@ -228,7 +228,7 @@ header {
 header h1 {
     color: var(--header-color);
     margin: 0;
-    font-size: var(--xlarge-font-size);
+    font-size: var(--large-font-size);
 }
 
 header p {
@@ -237,7 +237,7 @@ header p {
 
 section h2 {
     color: var(--header-color);
-    font-size: var(--xlarge-font-size);
+    font-size: var(--large-font-size);
 }
 
 section a {
