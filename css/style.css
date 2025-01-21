@@ -4,6 +4,7 @@
     --main-text-color: #d4d4d4;
     --sidebar-bg-color: #252526;
     --footer-bg-color: #181818;
+    --project-hover-color: #3c3c3c;
     --header-color: #f4b962;
     --link-color: #f4b962; /*569cd6*/
     --hover-color: #a88044; /*4178a3*/
@@ -313,7 +314,7 @@ section a:hover {
 }
 
 .project:hover, .more:hover {
-    background-color: #3c3c3c;
+    background-color: var(--project-hover-color);
     cursor: pointer; 
 }
 
@@ -333,12 +334,26 @@ section a:hover {
 }
 
 .project-image {
+    display: block;
     width: 100%;
     height: auto;
+    margin: 0 auto;
 }
 
 .project-image-web {
-    max-width: 40%;
+    display: block;
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.project button {
+    color: var(--main-text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: var(--gap-small) var(--gap-medium);
+    cursor: pointer;
+    font-size: var(--base-font-size);
+    transition: background-color 0.3s;
 }
 
 /* General form styling */
@@ -436,7 +451,7 @@ footer p {
     left: 50%;
     padding: 0 var(--sidebar-padding);
     transform: translate(-50%, -50%);
-    background-color: #474747;
+    background-color: var(--project-hover-color);
     z-index: 2;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     border-radius: var(--border-radius);
