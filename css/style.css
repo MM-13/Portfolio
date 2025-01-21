@@ -8,6 +8,10 @@
     --header-color: #f4b962;
     --link-color: #f4b962; /*569cd6*/
     --hover-color: #a88044; /*4178a3*/
+    --blue-color: #569cd6;
+    --theme-color: #f4b962;
+    --dark-filter: brightness(0) saturate(50%) invert(98%) sepia(38%) saturate(7456%) hue-rotate(310deg) brightness(50%) contrast(92%);
+    --light-filter: brightness(0) saturate(100%) invert(98%) sepia(38%) saturate(7456%) hue-rotate(310deg) brightness(100%) contrast(95%);
     --font-family: 'Courier New', Courier, monospace;
     --code-font-family: 'Consolas', 'Courier New', Courier, monospace;
     --base-font-size: 18px;
@@ -75,12 +79,12 @@ body {
     height: calc(100vh - 30px);
 }
 
-/* Apply to headings and project descriptions */
-h1, h2, h3, h4, pre, .project p, code {
-    font-family: var(--code-font-family);
-    font-size: var(--medium-font-size);
-    color: var(--main-text-color);
-    border-radius: var(--border-radius);
+.blue-text {
+    color: var(--blue-color);
+}
+
+.sunandmoon {
+    color: var(--theme-color);
 }
 
 /* Sidebar styles */
@@ -157,7 +161,7 @@ h1, h2, h3, h4, pre, .project p, code {
 
 .sidebar .socials li a:hover img {
     filter: brightness(0) saturate(100%) invert(34%) sepia(84%) saturate(2213%) hue-rotate(192deg) brightness(92%) contrast(101%);
-    filter: brightness(0) saturate(100%) invert(98%) sepia(38%) saturate(7456%) hue-rotate(310deg) brightness(100%) contrast(92%);
+    filter: var(--dark-filter);
 }
 
 /* Sidebar socials styles */
@@ -207,11 +211,11 @@ h1, h2, h3, h4, pre, .project p, code {
 }
 
 .sidebar1 .socials li a img {
-    filter: brightness(0) saturate(50%) invert(98%) sepia(38%) saturate(7456%) hue-rotate(310deg) brightness(50%) contrast(92%);
+    filter: var(--light-filter);
 }
 
 .sidebar1 .socials li a:hover img {
-    filter: brightness(0) saturate(100%) invert(98%) sepia(38%) saturate(7456%) hue-rotate(310deg) brightness(100%) contrast(92%);
+    filter: var(--dark-filter);
 }
 
 .content {
@@ -300,6 +304,7 @@ section a:hover {
     border-radius: var(--border-radius);
     flex-grow: 1;
     transition: background-color 0.3s;
+    text-align: center;
 }
 
 .more {
@@ -362,6 +367,32 @@ section a:hover {
     min-height: 500px;
 }
 
+.project-footer {
+    padding-top: auto;
+    margin-top: auto;
+    margin-bottom: 0; /* Pushes the button to the bottom of the project container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github button {
+    display: block;
+    padding: 0.625rem 1.25rem; /* 10px 20px */
+    background-color: #569cd6;
+    color: #d4d4d4;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.github button:hover {
+    background-color: #4178a3;
+}
+
 /* General form styling */
 form {
     display: flex;
@@ -412,7 +443,7 @@ form button[type="submit"] {
     font-size: var(--base-font-size);
     font-weight: bold;
     color: var(--main-text-color);
-    background-color: var(--link-color);
+    background-color: var(--blue-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -425,7 +456,6 @@ form button[type="submit"]:hover {
 
 .content form {
     max-width: 600px;
-    margin: 0 auto;
 }
 
 footer {
@@ -482,7 +512,7 @@ footer p {
 
 .overlay-content button {
     padding: var(--gap-small) var(--gap-large);
-    background-color: var(--link-color);
+    background-color: var(--blue-color);
     color: var(--main-text-color);
     text-transform: uppercase;
     border: none;
@@ -494,6 +524,13 @@ footer p {
 
 .overlay-content button:hover {
     background-color: var(--hover-color);
+}
+
+
+#overlay-group {
+    display: none; 
+    font-style: italic; 
+    color: var(--main-text-color);
 }
 
 #overlay-buttons {
@@ -508,10 +545,11 @@ footer p {
     font-size: var(--small-font-size);
     cursor: pointer;
     border: none;
-    background-color: var(--link-color);
+    background-color: var(--blue-color);
     color: var(--main-text-color);
     border-radius: var(--border-radius);
     transition: background-color 0.3s;
+    margin-bottom: 20px;
 }
 
 #overlay-buttons a button:hover {

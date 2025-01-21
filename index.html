@@ -15,37 +15,6 @@
     #overlay-play {
         display: none;
     }
-    #overlay-group {
-        display: none; 
-        font-style: italic; 
-        color: #f4f4f4;
-    }
-
-    .project-footer {
-        padding-top: auto;
-        margin-top: auto;
-        margin-bottom: 0; /* Pushes the button to the bottom of the project container */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .github button {
-        display: block;
-        padding: 0.625rem 1.25rem; /* 10px 20px */
-        background-color: #f4b962;
-        color: #d4d4d4;
-        text-transform: uppercase;
-        border: none;
-        border-radius: 5px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .github button:hover {
-        background-color: #a88044;
-    }
 </style>
 <body>
     <div class="container">
@@ -84,7 +53,7 @@
             </ul>
             <div class="socials">
                 <button id="theme-toggle">
-                    <span id="icon">&#9728;</span> <!-- sun icon --> 
+                    <span id="icon" class="sunandmoon">&#9728;</span> <!-- sun icon --> 
                 </button>
             </div>
         </aside>
@@ -99,22 +68,22 @@
         </aside>
         <main class="content">
             <section>
-                <h2><span style="color: #569cd6">Print: </span>"Hello, World! I'm a Developer!"</h2>
+                <h2><span class="blue-text">Print: </span>"Hello, World! I'm a Developer!"</h2>
                 <hr>
                 <div id="profile">
                     <div id="profile-text">
-                        <h3><span style="color: #569cd6">void </span>Where_It_All_Began!</h3>
+                        <h3><span class="blue-text">void </span>Where_It_All_Began!</h3>
                         <p>
-                            My name is Matthias Maes, I'm an independent game production student at Digital Arts & Entertainment at Howest University of Applied Sciences in Belgium. <br>
+                            My name is Matthias Maes, I'm an independent game production student at Digital Arts & Entertainment at Howest University of Applied Sciences in Belgium. <br><br>
                             My journey of how I came to love programming started with Python automation, then evolved into web development with HTML, CSS, and a bit of JavaScript. 
-                            Minecraft sparked my love for game creation, where I designed small games, mazes and dungeons, and made datapacks for extra fun. <br>
+                            Minecraft sparked my love for game creation, where I designed small games, mazes and dungeons, and made datapacks for extra fun. <br><br>
                             That's how I got into game development. Now, I combine my creativity and programming skills to craft unique games. 
                             As a quick learner, problem-solver, and team player, I'm excited to grow and make my mark in the industry.
                         </p>
                     </div>
                     <img src="Images/Personal/CV_Picture2.png" alt="Matthias Maes" id="profile-picture">
                 </div>
-                <h3><span style="color: #569cd6">void </span>My_Favorite_Projects</h3>
+                <h3><span class="blue-text">void </span>My_Favorite_Projects</h3>
                 <div class="projects">
                     <div class="project" id="project-image-2" onclick="openOverlay('project-image-2')">
                         <h4>Tides of Oblivion</h4>
@@ -129,9 +98,10 @@
                         <p><strong>Platform:</strong> Windows PC</p>
                         <p><strong>Language:</strong> Python</p>
                         <br>
-                        <div class="project-footer">
+                        <p>Click to visit!</p>
+                        <!--<div class="project-footer">
                             <a class="github"><button>GitHub - SYTaDeL</button></a>
-                        </div>
+                        </div>-->
                     </div>                    
                     <div class="project" onclick="myFunction('https://mm-13.github.io/CAP/')">
                         <h4>Chaotic Art Productions Website</h4>
@@ -169,6 +139,7 @@
             </div>
             <p id="overlay-description"></p>
             <p id="overlay-uniqueness"></p>
+            <p id="overlay-role"></p>
             <p><strong>Platform:</strong> <span id="overlay-platform"></span></p>
             <p><strong>Language:</strong> <span id="overlay-language"></span></p>
             <p id="overlay-group"></p>
