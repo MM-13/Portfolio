@@ -279,7 +279,19 @@ section a:hover {
     transition: background-color 0.3s;
 }
 
-.project:hover {
+.more {
+    background-color: var(--sidebar-bg-color);
+    width: calc(33.333% - var(--gap-large));
+    max-width: 100%;
+    padding: var(--gap-small);
+    border-radius: var(--border-radius);
+    flex-grow: 1;
+    transition: background-color 0.3s;
+    justify-content: center;
+    text-align: center;
+}
+
+.project:hover, .more:hover {
     background-color: #3c3c3c;
     cursor: pointer; 
 }

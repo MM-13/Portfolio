@@ -12,6 +12,40 @@
     h1 {
         cursor: pointer; 
     }
+    #overlay-play {
+        display: none;
+    }
+    #overlay-group {
+        display: none; 
+        font-style: italic; 
+        color: #f4f4f4;
+    }
+
+    .project-footer {
+        padding-top: auto;
+        margin-top: auto;
+        margin-bottom: 0; /* Pushes the button to the bottom of the project container */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .github button {
+        display: block;
+        padding: 0.625rem 1.25rem; /* 10px 20px */
+        background-color: #f4b962;
+        color: #d4d4d4;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .github button:hover {
+        background-color: #a88044;
+    }
 </style>
 <body>
     <div class="container">
@@ -70,29 +104,34 @@
                     </div>
                     <img src="Images/Personal/CV_Picture2.png" alt="Matthias Maes" id="profile-picture">
                 </div>
-                <h3>Discover</h3>
+                <h3>My Favorite Projects</h3>
                 <div class="projects">
-                    <div class="project">
-                        <a href="games.html">
-                            <h4>Projects</h4>
-                            <img class="project-image" src="Images/Personal/Picture2.png" alt="">
-                            <p>Take a look at my solo and group projects!<br>Games, apps, websites...</p>
-                        </a>
+                    <div class="project" id="project-image-2" onclick="openOverlay('project-image-2')">
+                        <h4>Tides of Oblivion</h4>
+                        <img class="project-image" src="Images/TidesOfOblivion.png" alt="Tides of Oblivion">
+                        <p>Stranded on an island in the middle of nowhere with Mother Nature trying to kill you. Prepare for coming storms and find your way off the island!</p>
+                        <p>...</p>
                     </div>
-                    <div class="project">
-                        <a href="about.html">
-                            <h4>Info</h4>
-                            <img class="project-image" src="Images/placeholder.jpg" alt="">
-                            <p>Want to know more about me / work with me? <br> Look here!</p>
-                        </a>
+                    <div class="project" onclick="myFunction('https://github.com/MM-13/SYTaDeL')">
+                        <h4>SYTaDeL</h4>
+                        <p>A tool made for downloading Spotify playlists via YouTube. I made it to help people download their playlists and listen to them offline.</p>
+                        <br>
+                        <p><strong>Platform:</strong> Windows PC</p>
+                        <p><strong>Language:</strong> Python</p>
+                        <br>
+                        <div class="project-footer">
+                            <a class="github"><button>GitHub - SYTaDeL</button></a>
+                        </div>
+                    </div>                    
+                    <div class="project" onclick="myFunction('https://mm-13.github.io/CAP/')">
+                        <h4>Chaotic Art Productions Website</h4>
+                        <img class="project-image-web" src="Images/capfinal.png" alt="CAP">
+                        <p>This is the website I made for a group project where we had to make a fictional company.</p>
+                        <br>
+                        <p>Click to visit!</p>
                     </div>
-                    
-                    <div class="project">
-                        <a href="interests.html">
-                            <h4>Interests</h4>
-                            <img class="project-image" src="Images/placeholder.jpg" alt="">
-                            <p>Get to know me on a personal level!<br>My personal interests!</p>
-                        </a>
+                    <div class="more" onclick="myFunction('games.html')">
+                        <p>See More...</p>
                     </div>
                 </div>
             </section>
@@ -107,7 +146,30 @@
         <p>Use the spacebar to jump!</p>
         <p id="score">Score: 0</p>
     </div>
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <span class="close" onclick="closeOverlay()">&times;</span>
+            <h2 id="overlay-title"></h2>
+            <div class="slider-container">
+                <img id="overlay-slider-image" class="slider-image" src="" alt="">
+                <div class="slider-nav">
+                    <button id="prev" onclick="prevImage()">&#10094;</button>
+                    <button id="next" onclick="nextImage()">&#10095;</button>
+                </div>
+            </div>
+            <p id="overlay-description"></p>
+            <p id="overlay-uniqueness"></p>
+            <p><strong>Platform:</strong> <span id="overlay-platform"></span></p>
+            <p><strong>Language:</strong> <span id="overlay-language"></span></p>
+            <p id="overlay-group"></p>
+            <div id="overlay-buttons">
+                <a id="overlay-download" href="#" target="_blank"><button>Download</button></a>
+                <a id="overlay-play" href="#" target="_blank"><button>Play</button></a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 <script src="js/EasterEgg.js"></script>
+<script src="js/projectsData.js"></script>
 <script src="js/functionHandler.js"></script>
