@@ -140,3 +140,13 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
+// Jump on screen tap (for mobile devices)
+document.addEventListener('touchstart', function (e) {
+    // Prevent default to avoid interference with other touch behaviors
+    e.preventDefault();
+
+    // Simulate jump if player is on the ground
+    if (player.y === canvas.height - player.height) {
+        isJumping = true;
+    }
+});
