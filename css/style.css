@@ -67,6 +67,7 @@ body {
     color: var(--main-text-color);
     font-size: var(--base-font-size);
     line-height: 1.5;
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -354,6 +355,11 @@ section a:hover {
     cursor: pointer;
     font-size: var(--base-font-size);
     transition: background-color 0.3s;
+}
+
+.sketchfab iframe {
+    width: 100%;
+    min-height: 500px;
 }
 
 /* General form styling */
