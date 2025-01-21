@@ -5,10 +5,13 @@
 
 /* Style for the canvas and the game display */
 #game-container {
+    background-color: #252526;
+    border-radius: 5px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: #d4d4d4;
 }
 
 canvas {
