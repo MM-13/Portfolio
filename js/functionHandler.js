@@ -13,6 +13,7 @@ function openOverlay(projectId) {
     overlay.querySelector('#overlay-uniqueness').textContent = project.uniqueness;
     overlay.querySelector('#overlay-platform').textContent = project.platform;
     overlay.querySelector('#overlay-language').textContent = project.language;
+    overlay.querySelector('#overlay-role').textContent = project.role;
 
     // Initialize image slider
     currentImageIndex = 0;
@@ -90,6 +91,7 @@ function applyTheme(theme) {
         document.documentElement.style.setProperty('--sidebar-bg-color', '#f0f0f0');
         document.documentElement.style.setProperty('--footer-bg-color', '#e0e0e0');
         document.documentElement.style.setProperty('--project-hover-color', '#d0d0d0');
+        document.documentElement.style.setProperty('--theme-color', '#569cd6');
     } else {
         document.body.classList.remove('light-theme');
         icon.innerHTML = '&#9728;'; // sun icon
@@ -98,6 +100,7 @@ function applyTheme(theme) {
         document.documentElement.style.setProperty('--sidebar-bg-color', '#252526');
         document.documentElement.style.setProperty('--footer-bg-color', '#181818');
         document.documentElement.style.setProperty('--project-hover-color', '#3c3c3c');
+        document.documentElement.style.setProperty('--theme-color', '#f4b962');
     }
 }
 

@@ -16,32 +16,6 @@
         font-style: italic; 
         color: #f4f4f4;
     }
-
-    .project-footer {
-        padding-top: auto;
-        margin-top: auto;
-        margin-bottom: 0; /* Pushes the button to the bottom of the project container */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .github button {
-        display: block;
-        padding: 0.625rem 1.25rem; /* 10px 20px */
-        background-color: #569cd6;
-        color: #d4d4d4;
-        text-transform: uppercase;
-        border: none;
-        border-radius: 5px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .github button:hover {
-        background-color: #4178a3;
-    }
 </style>
 <body>
     <div class="container">
@@ -80,7 +54,7 @@
             </ul>
             <div class="socials">
                 <button id="theme-toggle">
-                    <span id="icon">&#9728;</span> <!-- sun icon --> 
+                    <span id="icon" class="sunandmoon">&#9728;</span> <!-- sun icon --> 
                 </button>
             </div>
         </aside>
@@ -95,9 +69,9 @@
         </aside>
         <main class="content">
             <section>
-                <h2><span style="color: #569cd6">Print: </span>"Projects"</h2>
+                <h2><span class="blue-text">Print: </span>"Projects"</h2>
                 <hr>
-                <h3><span style="color: #569cd6">void </span>Game_Jam_&_Group_Projects</h3>
+                <h3><span class="blue-text">void </span>Game_Jam_&_Group_Projects</h3>
                 <div class="projects">
                     <div class="project" id="project-image-1" onclick="openOverlay('project-image-1')">
                         <h4>Bonkers for Loot</h4>
@@ -118,7 +92,7 @@
                         <p>...</p>
                     </div>
                 </div>
-                <h3><span style="color: #569cd6">void </span>Personal_Games</h3>
+                <h3><span class="blue-text">void </span>Personal_Games</h3>
                 <div class="projects">
                     <div class="project" id="project-image-4" onclick="openOverlay('project-image-4')">
                         <h4>Asteroid Trap</h4>
@@ -133,7 +107,7 @@
                         <p>...</p>
                     </div>
                 </div>
-                <h3><span style="color: #569cd6">void </span>GitHub_Projects_&_Websites</h3>
+                <h3><span class="blue-text"">void </span>GitHub_Projects_&_Websites</h3>
                 <div class="projects">
                     <div class="project" onclick="myFunction('https://github.com/MM-13/CloudZip')">
                         <h4>CloudZIP</h4>
@@ -142,9 +116,10 @@
                         <p><strong>Platform:</strong> Windows PC</p>
                         <p><strong>Language:</strong> Python</p>
                         <br>
-                        <div class="project-footer">
+                        <p>Click to visit!</p>
+                        <!--<div class="project-footer">
                             <a class="github"><button>GitHub - CloudZIP</button></a>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="project" onclick="myFunction('https://github.com/MM-13/SYTaDeL')">
                         <h4>SYTaDeL</h4>
@@ -153,9 +128,10 @@
                         <p><strong>Platform:</strong> Windows PC</p>
                         <p><strong>Language:</strong> Python</p>
                         <br>
-                        <div class="project-footer">
+                        <p>Click to visit!</p>
+                        <!--<div class="project-footer">
                             <a class="github"><button>GitHub - SYTaDeL</button></a>
-                        </div>
+                        </div>-->
                     </div>                    
                     <div class="project" onclick="myFunction('https://mm-13.github.io/CAP/')">
                         <h4>Chaotic Art Productions Website</h4>
@@ -179,7 +155,7 @@
                         <p>Click to visit!</p>
                     </div>
                 </div>
-                <h3><span style="color: #569cd6">void </span>3D_Models_Extra</h3>
+                <h3><span class="blue-text">void </span>3D_Models_Extra</h3>
                 <div class="projects">
                     <div class="project" onclick="myFunction('https://sketchfab.com/3d-models/f4u-corsair-moustachekart-17921d6e15744971ac0cc12b8826d1ca')">
                         <h4>F4U Corsair MoustacheKart</h4>
@@ -203,6 +179,7 @@
                         </div>
                         <p id="overlay-description"></p>
                         <p id="overlay-uniqueness"></p>
+                        <p id="overlay-role"></p>
                         <p><strong>Platform:</strong> <span id="overlay-platform"></span></p>
                         <p><strong>Language:</strong> <span id="overlay-language"></span></p>
                         <p id="overlay-group"></p>

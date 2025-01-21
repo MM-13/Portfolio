@@ -6,6 +6,7 @@ const projectsData = [
         images: ["Images/BonkersForLoot.png"],
         platform: "Windows / PC",
         language: "Unity / C#",
+        role: "UI/UX Designer, Sound Developper, Programmer",
         uniqueness: "This was an exam project working in group, making a game, managing, source control and following the rules of game design.",
         downloadLink: "https://scuttsy.itch.io/bonkers-for-loot",
         group: true
@@ -17,6 +18,7 @@ const projectsData = [
         images: ["Images/TidesOfOblivion.png", "Images/Tides of Oblivion/screen.png", "Images/Tides of Oblivion/trees.png", "Images/Tides of Oblivion/stones.png", "Images/Tides of Oblivion/crafting.png"],
         platform: "Windows / PC",
         language: "Unity / C#",
+        role: "UI/UX Designer, Lead Programmer, Game Producer",
         uniqueness: "This was made for a game jam where we had to make a game in less than 2 days.",
         downloadLink: "https://mm-13.itch.io/tides-of-oblivion",
         group: true
@@ -28,6 +30,7 @@ const projectsData = [
         images: ["Images/zYpPY2.png", "Images/Smack n Snatch/start.png", "Images/Smack n Snatch/second.png", "Images/Smack n Snatch/smack.png", "Images/Smack n Snatch/UI.png"],
         platform: "Windows / PC",
         language: "MonoGame / C#",
+        role: "UI/UX Designer",
         uniqueness: "This was made for a game jam where we had to make a game in less than 5 days.",
         downloadLink: "https://mm-13.itch.io/smack-n-snatch",
         group: true
