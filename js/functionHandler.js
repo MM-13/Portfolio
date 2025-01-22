@@ -86,12 +86,15 @@ function applyTheme(theme) {
     if (theme === 'light') {
         document.body.classList.add('light-theme');
         icon.innerHTML = '&#9790;'; // moon icon
-        document.documentElement.style.setProperty('--main-bg-color', '#ffffff');
+        document.documentElement.style.setProperty('--main-bg-color', '#f4f4db');
         document.documentElement.style.setProperty('--main-text-color', '#000000');
-        document.documentElement.style.setProperty('--sidebar-bg-color', '#f0f0f0');
+        document.documentElement.style.setProperty('--sidebar-bg-color', '#dfdfc8');
         document.documentElement.style.setProperty('--footer-bg-color', '#e0e0e0');
         document.documentElement.style.setProperty('--project-hover-color', '#d0d0d0');
         document.documentElement.style.setProperty('--theme-color', '#569cd6');
+        document.documentElement.style.setProperty('--header-color', '#D2953C');
+        document.documentElement.style.setProperty('--link-color', '#D2953C');
+        document.documentElement.style.setProperty('--light-filter', 'invert(72%) sepia(56%) saturate(616%) hue-rotate(338deg) brightness(86%) contrast(91%)');
     } else {
         document.body.classList.remove('light-theme');
         icon.innerHTML = '&#9728;'; // sun icon
@@ -101,6 +104,9 @@ function applyTheme(theme) {
         document.documentElement.style.setProperty('--footer-bg-color', '#181818');
         document.documentElement.style.setProperty('--project-hover-color', '#3c3c3c');
         document.documentElement.style.setProperty('--theme-color', '#f4b962');
+        document.documentElement.style.setProperty('--header-color', '#f4b962');
+        document.documentElement.style.setProperty('--link-color', '#f4b962');
+        document.documentElement.style.setProperty('--light-filter', 'brightness(0) saturate(100%) invert(98%) sepia(38%) saturate(7456%) hue-rotate(310deg) brightness(100%) contrast(95%)');
     }
 }
 
