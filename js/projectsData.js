@@ -1,5 +1,17 @@
 const projectsData = [
     {
+        id: "project-image-0",
+        title: "Café CATastrophe",
+        description: "This game was made by the 'Game First, Name Later!' group for the Creaweek 2025 Game Jam and finished 8th/30+. The game is about cats spreading mess and chaos by destroying the cafe, while the grandma is trying to catch the cats and keep her cafe intact. Our game is a couch-co-op game and can be played with 2-3 players. 1 person CAN play with keyboard and the other 1-2 with controller, but everyone can play with controller as well.",
+        images: ["Images/CC/cover.png"],
+        platform: "Browser / Windows / PC",
+        language: "Unity / C#",
+        role: "Producer, Developper, Level Designer, SFX",
+        uniqueness: "This was an exam project working in group, making a game, managing, source control and following the rules of game design.",
+        downloadLink: "https://mm-13.itch.io/cafe-catastrophe",
+        group: true
+    },
+    {
         id: "project-image-1",
         title: "Bonkers for Loot",
         description: "You're a hungry penguin and you're trying to collect as many fish and bring them back home before the other penguins do the same! Slide, bump and grind your way to the top of the iceberg! Bonkers for loot is a goofy couch party game that pits you against where you slide around and try to catch the most fish! We made this game as an exam project, which we all enjoyed working on, developing the game-play and making sure the game was not only fun to make, but also fun to play! Play with up to 4 people with a controller or with mouse and keyboard.",
