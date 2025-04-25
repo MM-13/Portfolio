@@ -494,13 +494,60 @@ footer p {
     overflow-y: auto;
 }
 
-.overlay img {
-    width: 75%;
-    height: auto;
+/* Updated slider container styles */
+.slider-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    max-height: 60vh;
+    width: 100%;
+}
+
+/* Styles for both images and videos */
+.slider-container img,
+.slider-container video {
+    max-width: 75%;
+    max-height: 60vh;
+    object-fit: contain;
     display: block;
     margin: 0 auto;
 }
 
+/* Video-specific styles */
+.slider-container video {
+    background-color: #000;
+}
+
+/* Navigation buttons */
+.slider-nav {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.slider-nav button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: var(--border-radius);
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.slider-nav button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Rest of your original styles */
 .overlay-content p {
     text-align: center;
 }
@@ -525,7 +572,6 @@ footer p {
 .overlay-content button:hover {
     background-color: var(--hover-color);
 }
-
 
 #overlay-group {
     display: none; 

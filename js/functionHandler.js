@@ -15,20 +15,21 @@ function openOverlay(projectId) {
     overlay.querySelector('#overlay-language').textContent = project.language;
     overlay.querySelector('#overlay-role').textContent = project.role;
 
-    // Initialize image slider
+    // Initialize media slider
     currentImageIndex = 0;
     currentProjectId = projectId; // Store the current project id
     updateSliderImage(project.images);
 
-     // Handle group project note
-     const groupNote = overlay.querySelector('#overlay-group');
-     groupNote.style.display = 'none'; // Reset visibility
-     groupNote.textContent = '';       // Clear previous content
+    // Rest of your existing code...
+    // Handle group project note
+    const groupNote = overlay.querySelector('#overlay-group');
+    groupNote.style.display = 'none'; // Reset visibility
+    groupNote.textContent = '';       // Clear previous content
 
-     if (project.group) {
-         groupNote.textContent = "This was a group project / Game jam.";
-         groupNote.style.display = 'block';
-     }
+    if (project.group) {
+        groupNote.textContent = "This was a group project / Game jam.";
+        groupNote.style.display = 'block';
+    }
 
     // Handle download button
     const downloadButton = overlay.querySelector('#overlay-download');
@@ -54,9 +55,35 @@ function closeOverlay() {
 }
 
 // Update image in slider
-function updateSliderImage(images) {
-    const sliderImage = document.getElementById('overlay-slider-image');
-    sliderImage.src = images[currentImageIndex];
+// Update media in slider (image or video)
+function updateSliderImage(mediaItems) {
+    const sliderContainer = document.querySelector('.slider-container');
+    const currentMedia = mediaItems[currentImageIndex];
+    
+    // Clear previous content
+    sliderContainer.innerHTML = `
+        <div class="slider-nav">
+            <button id="prev" onclick="prevImage()">&#10094;</button>
+            <button id="next" onclick="nextImage()">&#10095;</button>
+        </div>
+    `;
+    
+    const mediaElement = document.createElement(currentMedia.endsWith('.mp4') ? 'video' : 'img');
+    mediaElement.src = currentMedia;
+    
+    if (currentMedia.endsWith('.mp4')) {
+        mediaElement.controls = true;
+        mediaElement.autoplay = true;
+        mediaElement.loop = true;
+        mediaElement.muted = true; // Autoplay requires muted video
+        mediaElement.style.width = '100%';
+        mediaElement.style.maxHeight = '70vh';
+    } else {
+        mediaElement.alt = '';
+        mediaElement.className = 'slider-image';
+    }
+    
+    sliderContainer.insertBefore(mediaElement, sliderContainer.firstChild);
 }
 
 // Navigate to previous image
