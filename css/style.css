@@ -497,17 +497,14 @@ footer p {
 /* Updated slider container styles */
 .slider-container {
     position: relative;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px 0;
-    max-height: 60vh;
-    width: 100%;
 }
 
-/* Styles for both images and videos */
-.slider-container img,
-.slider-container video {
+.slider-image, .slider-video {
     max-width: 75%;
     max-height: 60vh;
     object-fit: contain;
@@ -515,8 +512,8 @@ footer p {
     margin: 0 auto;
 }
 
-/* Video-specific styles */
-.slider-container video {
+.slider-video {
+    display: none; /* Hidden by default */
     background-color: #000;
 }
 

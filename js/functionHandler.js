@@ -57,29 +57,30 @@ function closeOverlay() {
 // Update image in slider
 // Update media in slider (image or video)
 function updateSliderImage(mediaItems) {
-    const sliderContainer = document.querySelector('.slider-container');
+    const sliderImage = document.getElementById('overlay-slider-image');
+    const sliderVideo = document.getElementById('overlay-slider-video');
     const currentMedia = mediaItems[currentImageIndex];
 
-    // Find and remove only the media element (keep nav buttons)
-    const mediaElements = sliderContainer.querySelectorAll('.slider-media, .slider-image, video, img');
-    mediaElements.forEach(el => el.remove());
-    
-    const mediaElement = document.createElement(currentMedia.endsWith('.mp4') ? 'video' : 'img');
-    mediaElement.src = currentMedia;
-    
-    if (currentMedia.endsWith('.mp4')) {
-        mediaElement.controls = true;
-        mediaElement.autoplay = true;
-        mediaElement.loop = true;
-        mediaElement.muted = true; // Autoplay requires muted video
-        mediaElement.style.width = '75%';
-        mediaElement.style.maxHeight = '60vh';
+    // Check if it's a video (ends with .mp4 or .webm)
+    if (currentMedia.endsWith('.mp4') || currentMedia.endsWith('.webm')) {
+        // Hide image, show video
+        sliderImage.style.display = 'none';
+        sliderVideo.style.display = 'block';
+        
+        // Set video source
+        sliderVideo.src = currentMedia;
+        sliderVideo.autoplay = true;
+        sliderVideo.loop = true;
+        sliderVideo.muted = true;
+        sliderVideo.controls = true;
     } else {
-        mediaElement.alt = '';
-        mediaElement.className = 'slider-image';
+        // Hide video, show image
+        sliderVideo.style.display = 'none';
+        sliderImage.style.display = 'block';
+        
+        // Set image source
+        sliderImage.src = currentMedia;
     }
-    
-    sliderContainer.insertBefore(mediaElement, sliderContainer.firstChild);
 }
 
 // Navigate to previous image
