@@ -59,6 +59,10 @@ function closeOverlay() {
 function updateSliderImage(mediaItems) {
     const sliderContainer = document.querySelector('.slider-container');
     const currentMedia = mediaItems[currentImageIndex];
+
+    // Find and remove only the media element (keep nav buttons)
+    const mediaElements = sliderContainer.querySelectorAll('.slider-media, .slider-image, video, img');
+    mediaElements.forEach(el => el.remove());
     
     const mediaElement = document.createElement(currentMedia.endsWith('.mp4') ? 'video' : 'img');
     mediaElement.src = currentMedia;
