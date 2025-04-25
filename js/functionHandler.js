@@ -68,6 +68,8 @@ function updateSliderImage(mediaItems) {
         mediaElement.autoplay = true;
         mediaElement.loop = true;
         mediaElement.muted = true; // Autoplay requires muted video
+        mediaElement.style.width = '100%';
+        mediaElement.style.maxHeight = '70vh';
     } else {
         mediaElement.alt = '';
         mediaElement.className = 'slider-image';
