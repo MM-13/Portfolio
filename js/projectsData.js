@@ -3,7 +3,7 @@ const projectsData = [
         id: "project-image-4",
         title: "Café CATastrophe",
         description: "This game was made by the 'Game First, Name Later!' group for the Creaweek 2025 Game Jam and finished 8th/30+. The game is about cats spreading mess and chaos by destroying the cafe, while the grandma is trying to catch the cats and keep her cafe intact. Our game is a couch-co-op game and can be played with 2-3 players. 1 person CAN play with keyboard and the other 1-2 with controller, but everyone can play with controller as well.",
-        images: ["Images/CC/cover.png"],
+        images: ["Images/CC/cover.png", "Resources/CafeCatastrophe.mp4"],
         platform: "Browser / Windows / PC",
         language: "Unity / C#",
         role: "Producer, Developper, Level Designer, SFX",
