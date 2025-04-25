@@ -60,14 +60,6 @@ function updateSliderImage(mediaItems) {
     const sliderContainer = document.querySelector('.slider-container');
     const currentMedia = mediaItems[currentImageIndex];
     
-    // Clear previous content
-    sliderContainer.innerHTML = `
-        <div class="slider-nav">
-            <button id="prev" onclick="prevImage()">&#10094;</button>
-            <button id="next" onclick="nextImage()">&#10095;</button>
-        </div>
-    `;
-    
     const mediaElement = document.createElement(currentMedia.endsWith('.mp4') ? 'video' : 'img');
     mediaElement.src = currentMedia;
     
@@ -76,8 +68,6 @@ function updateSliderImage(mediaItems) {
         mediaElement.autoplay = true;
         mediaElement.loop = true;
         mediaElement.muted = true; // Autoplay requires muted video
-        mediaElement.style.width = '100%';
-        mediaElement.style.maxHeight = '70vh';
     } else {
         mediaElement.alt = '';
         mediaElement.className = 'slider-image';
