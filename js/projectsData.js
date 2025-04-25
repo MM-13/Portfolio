@@ -7,7 +7,7 @@ const projectsData = [
         platform: "Browser / Windows / PC",
         language: "Unity / C#",
         role: "Producer, Developper, Level Designer, SFX",
-        uniqueness: "This was an exam project working in group, making a game, managing, source control and following the rules of game design.",
+        uniqueness: "This game was made by the 'Game First, Name Later!' group for the Creaweek 2025 Game Jam and finished 8th/30+. It was made with a team of 5 Digital Arts & Entertainment students in around 2 days.",
         downloadLink: "https://mm-13.itch.io/cafe-catastrophe",
         group: true
     },
