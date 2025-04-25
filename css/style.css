@@ -508,7 +508,7 @@ footer p {
 /* Styles for both images and videos */
 .slider-container img,
 .slider-container video {
-    max-width: 75%;
+    max-width: 100%;
     max-height: 60vh;
     object-fit: contain;
     display: block;
